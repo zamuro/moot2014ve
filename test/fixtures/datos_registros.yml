@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario_id: 1
+  nombre: MyText
+  ci: 1
+  credencial: 1
+  fechaNac: 2013-11-14
+  nivel_id: 1
+  region_id: 1
+  distrito_id: 1
+  grupo_id: 1
+  rama_id: 1
+  unidad_id: 1
+
+two:
+  usuario_id: 1
+  nombre: MyText
+  ci: 1
+  credencial: 1
+  fechaNac: 2013-11-14
+  nivel_id: 1
+  region_id: 1
+  distrito_id: 1
+  grupo_id: 1
+  rama_id: 1
+  unidad_id: 1

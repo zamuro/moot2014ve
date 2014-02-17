@@ -1,0 +1,42 @@
+<h1>Datos de contacto de usuarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Teléfono Principal</th>
+      <th>Teléfono Secundario</th>
+      <th>Correo Electrónico</th>
+      <th>Dirección Principal</th>
+      <th>Dirección Secundaria</th>
+      <th>Número de contacto principal</th>
+      <th>Nombre de contacto principal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datos_usuarios.each do |datos_usuario| %>
+      <tr>
+        <td><%= datos_usuario.usuario_id %></td>
+        <td><%= datos_usuario.tel1 %></td>
+        <td><%= datos_usuario.tel2 %></td>
+        <td><%= datos_usuario.correo %></td>
+        <td><%= datos_usuario.direccion1 %></td>
+        <td><%= datos_usuario.direccion2 %></td>
+        <td><%= datos_usuario.contacto1 %></td>
+        <td><%= datos_usuario.contacto2 %></td>
+        <td><%= link_to 'Mostrar', datos_usuario %></td>
+        <td><%= link_to 'Editar', edit_datos_usuario_path(datos_usuario) %></td>
+        <td><%= link_to 'Eliminar', datos_usuario, method: :delete, data: { confirm: 'Favor Confirmar' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Registrar nuevos datos', new_datos_usuario_path %>
+<%= link_to "Menú Principal", root_path %>

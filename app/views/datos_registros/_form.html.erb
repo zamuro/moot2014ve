@@ -1,0 +1,61 @@
+<%= form_for(@datos_registro) do |f| %>
+  <% if @datos_registro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datos_registro.errors.count, "error") %> prohibited this datos_registro from being saved:</h2>
+
+      <ul>
+      <% @datos_registro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.number_field :usuario_id %>
+  </div>
+  <div class="field">
+    <%= f.label "Nombre del participante" %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label "Cédula de Identidad" %><br>
+    <%= f.text_field :ci %>
+  </div>
+  <div class="field">
+    <%= f.label "Número de credencial" %><br>
+    <%= f.text_field :credencial %>
+  </div>
+  <div class="field">
+    <%= f.label "Fecha de Nacimiento" %><br>
+    <%= f.date_select :fechaNac %>
+  </div>
+  <div class="field">
+    <%= f.label "Nivel de la Estructura" %><br>
+    <%= f.collection_select(:nivel_id, Nivel.all, :id, :nivel, :prompt => true)%>
+  </div>
+  <div class="field">
+    <%= f.label "Región" %><br>
+    <%= f.collection_select(:region_id, Region.all, :id, :region, :prompt => true)%>
+  </div>
+  <div class="field">
+    <%= f.label "Distrito" %><br>
+    <%= f.collection_select(:distrito_id, Distrito.all, :id, :distrito, :prompt => true)%>
+  </div>
+  <div class="field">
+    <%= f.label "Grupo" %><br>
+    <%= f.collection_select(:grupo_id, Grupo.all, :id, :grupo, :prompt => true)%>
+  </div>
+  <div class="field">
+    <%= f.label "Rama" %><br>
+    <%= f.collection_select(:rama_id, Rama.all, :id, :rama, :prompt => true)%>
+  </div>
+  <div class="field">
+    <%= f.label "Unidad" %><br>
+    <%= f.collection_select(:unidad_id, Unidad.all, :id, :unidad, :prompt => true)%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

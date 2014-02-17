@@ -1,0 +1,49 @@
+<%= form_for(@datos_usuario) do |f| %>
+  <% if @datos_usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datos_usuario.errors.count, "error") %> prohibited this datos_usuario from being saved:</h2>
+
+      <ul>
+      <% @datos_usuario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.number_field :usuario_id %>
+  </div>
+  <div class="field">
+    <%= f.label "Número telefónico principal" %><br>
+    <%= f.text_field :tel1 %>
+  </div>
+  <div class="field">
+    <%= f.label "Número telefónico secundario" %><br>
+    <%= f.text_field :tel2 %>
+  </div>
+  <div class="field">
+    <%= f.label "Correo electrónico" %><br>
+    <%= f.text_field :correo %>
+  </div>
+  <div class="field">
+    <%= f.label "Dirección principal" %><br>
+    <%= f.text_area :direccion1 %>
+  </div>
+  <div class="field">
+    <%= f.label "Dirección secundaria" %><br>
+    <%= f.text_area :direccion2 %>
+  </div>
+  <div class="field">
+    <%= f.label "Número telefónico de contacto principal" %><br>
+    <%= f.text_field :contacto1 %>
+  </div>
+  <div class="field">
+    <%= f.label "Nombre contacto principal" %><br>
+    <%= f.text_field :contacto2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

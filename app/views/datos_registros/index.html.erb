@@ -1,0 +1,47 @@
+<h1>Datos de usuarios registrados</h1>
+Nivel de Acceso: Nacional
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cédula de Identidad</th>
+      <th>Credencial</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Nivel</th>
+      <th>Región</th>
+      <th>Distrito</th>
+      <th>Grupo</th>
+      <th>Rama</th>
+      <th>Unidad</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datos_registros.each do |datos_registro| %>
+      <tr>
+        <td><%= datos_registro.nombre %></td>
+        <td><%= datos_registro.ci %></td>
+        <td><%= datos_registro.credencial %></td>
+        <td><%= datos_registro.fechaNac %></td>
+        <td><%= datos_registro.nivel.nivel %></td>
+        <td><%= datos_registro.region.region %></td>
+        <td><%= datos_registro.distrito.distrito %></td>
+        <td><%= datos_registro.grupo.grupo %></td>
+        <td><%= datos_registro.rama.rama %></td>
+        <td><%= datos_registro.unidad.unidad %></td>
+        <td><%= link_to 'Mostrar', datos_registro %></td>
+        <td><%= link_to 'Editar', edit_datos_registro_path(datos_registro) %></td>
+        <td><%= link_to 'Borrar', datos_registro, method: :delete, data: { confirm: 'Confirme. Esta acción no puede deshacerse' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Introduzca nuevos datos de usuario', new_datos_registro_path %>
+<%= link_to "Menú Principal", root_path %>

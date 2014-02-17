@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @datos_registro.nombre %>
+</p>
+
+<p>
+  <strong>Cédula de Identidad:</strong>
+  <%= @datos_registro.ci %>
+</p>
+
+<p>
+  <strong>Credencial:</strong>
+  <%= @datos_registro.credencial %>
+</p>
+
+<p>
+  <strong>Fecha de Nacimiento:</strong>
+  <%= @datos_registro.fechaNac %>
+</p>
+
+<p>
+  <strong>Nivel:</strong>
+  <%= @datos_registro.nivel.nivel %>
+</p>
+
+<p>
+  <strong>Región:</strong>
+  <%= @datos_registro.region.region %>
+</p>
+
+<p>
+  <strong>Distrito:</strong>
+  <%= @datos_registro.distrito.distrito %>
+</p>
+
+<p>
+  <strong>Grupo:</strong>
+  <%= @datos_registro.grupo.grupo %>
+</p>
+
+<p>
+  <strong>Rama:</strong>
+  <%= @datos_registro.rama.rama %>
+</p>
+
+<p>
+  <strong>Unidad:</strong>
+  <%= @datos_registro.unidad.unidad %>
+</p>
+
+<%= link_to 'Edit', edit_datos_registro_path(@datos_registro) %> |
+<%= link_to 'Back', datos_registros_path %>
