@@ -1,4 +1,4 @@
-<%= form_for(@datos_usuario) do |f| %>
+<%= simple_form_for(@datos_usuario) do |f| %>
   <% if @datos_usuario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@datos_usuario.errors.count, "error") %> prohibited this datos_usuario from being saved:</h2>
@@ -12,35 +12,40 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :usuario_id %><br>
-    <%= f.number_field :usuario_id %>
+    <% if usuario_signed_in? %>
+ID del usuario
+    <%= f.input :usuario_id, :as => :hidden, :value => "current_usuario.id" %>
+    <%= current_usuario.id %>
+    <% end -%>
   </div>
   <div class="field">
-    <%= f.label "Número telefónico principal" %><br>
+    Teléfono principal
     <%= f.text_field :tel1 %>
   </div>
   <div class="field">
-    <%= f.label "Número telefónico secundario" %><br>
+    Teléfono secundario
     <%= f.text_field :tel2 %>
   </div>
   <div class="field">
-    <%= f.label "Correo electrónico" %><br>
-    <%= f.text_field :correo %>
+    <% if usuario_signed_in? %>
+    Correo electrónico
+        <%= current_usuario.email %>
+        <% end -%>
   </div>
   <div class="field">
-    <%= f.label "Dirección principal" %><br>
-    <%= f.text_area :direccion1 %>
+    Dirección principal
+    <%= f.text_field :direccion1 %>
   </div>
   <div class="field">
-    <%= f.label "Dirección secundaria" %><br>
-    <%= f.text_area :direccion2 %>
+    Dirección secundaria
+    <%= f.text_field :direccion2 %>
   </div>
   <div class="field">
-    <%= f.label "Número telefónico de contacto principal" %><br>
+    Nombre del contacto principal
     <%= f.text_field :contacto1 %>
   </div>
   <div class="field">
-    <%= f.label "Nombre contacto principal" %><br>
+    Nombre del contacto secundario
     <%= f.text_field :contacto2 %>
   </div>
   <div class="actions">
