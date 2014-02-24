@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Usuario</th>
       <th>Teléfono Principal</th>
       <th>Teléfono Secundario</th>
       <th>Correo Electrónico</th>
@@ -20,7 +19,6 @@
   <tbody>
     <% @datos_usuarios.each do |datos_usuario| %>
       <tr>
-        <td><%= datos_usuario.usuario_id %></td>
         <td><%= datos_usuario.tel1 %></td>
         <td><%= datos_usuario.tel2 %></td>
         <td><%= datos_usuario.correo %></td>
