@@ -10,28 +10,30 @@
       </ul>
     </div>
   <% end %>
+  
   <% if usuario_signed_in? %>
-<div class="field">
-  id de usuario 
-  <%= current_usuario.id %>
+    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
   <% end %>
-</div>
+
 <div class="field">
   Nombre completo
   <%= f.text_field :nombre %>
   </div>
   <div class="field">
     Cédula de Identidad
-  <%= f.text_field :ci, :hint => "No coloques puntos ni letras"  %>
-  </div>
+  <%= f.text_field :ci -%>
+No coloques puntos ni letras
+    </div>
   <div class="field">
     Número de Credencial
-<%= f.text_field :credencial, :hint => "No coloques puntos ni letras" %>
+<%= f.text_field :credencial %>
+No coloques puntos ni letras
 </div>
 <div class="field">
   Fecha de Nacimiento
-  <%= f.text_field :fechaNac, :hint => "En formato DD/MM/AAAA. Ejemplo: 10/10/2000" %>
-  </div>
+  <%= f.text_field :fechaNac %>
+  En formato DD/MM/AAAA. Ejemplo: 10/10/2000
+</div>
   <div class="field">
     Nivel de la estructura
   <%= f.collection_select :nivel_id, Nivel.all, :id, :nivel %>

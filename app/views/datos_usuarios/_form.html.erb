@@ -11,13 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
     <% if usuario_signed_in? %>
-ID del usuario
-    <%= f.input :usuario_id, :as => :hidden, :value => "current_usuario.id" %>
-    <%= current_usuario.id %>
+      <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
     <% end -%>
-  </div>
   <div class="field">
     Teléfono principal
     <%= f.text_field :tel1 %>
@@ -29,8 +25,9 @@ ID del usuario
   <div class="field">
     <% if usuario_signed_in? %>
     Correo electrónico
-        <%= current_usuario.email %>
-        <% end -%>
+      <b><%= current_usuario.email %></b>
+      <%= f.hidden_field "correo", :value => current_usuario.email %>
+    <% end -%>
   </div>
   <div class="field">
     Dirección principal
