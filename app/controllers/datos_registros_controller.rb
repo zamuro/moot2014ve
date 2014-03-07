@@ -25,7 +25,7 @@ class DatosRegistrosController < ApplicationController
   # POST /datos_registros.json
   def create
     @datos_registro = DatosRegistro.new(datos_registro_params)
-
+    
     respond_to do |format|
       if @datos_registro.save
         format.html { redirect_to @datos_registro, notice: 'Datos registro was successfully created.' }

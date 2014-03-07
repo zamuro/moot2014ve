@@ -8,4 +8,5 @@ class DatosRegistro < ActiveRecord::Base
 	belongs_to :grupo
 	belongs_to :rama
 	belongs_to :unidad		
+	
 end

@@ -1,9 +1,15 @@
 Moot::Application.routes.draw do
-  
+  get "alergias/new"
+  get "alergias/index"
+  get "alergias/show"
+  resources :alergias
+  resources :enfermedades
+  #devise_for :usuarios, :controllers => { registrations: 'usuarios/sign_up' }
   devise_for :usuarios
   get "inicio/index"
   resources :datos_usuarios
   resources :datos_registros
+  resources :fichas_medicas
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
