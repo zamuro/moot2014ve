@@ -1,0 +1,25 @@
+<h1>Listing vacunas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vacunas.each do |vacuna| %>
+      <tr>
+        <td><%= link_to 'Show', vacuna %></td>
+        <td><%= link_to 'Edit', edit_vacuna_path(vacuna) %></td>
+        <td><%= link_to 'Destroy', vacuna, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vacuna', new_vacuna_path %>

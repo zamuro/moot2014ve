@@ -54,6 +54,6 @@ gem 'simple_form'
 
 gem 'devise'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 ruby "2.0.0"

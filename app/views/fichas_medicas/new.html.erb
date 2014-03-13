@@ -1,3 +1,7 @@
+<h1>Creación de tu ficha médica</h1>
+<div class="alert alert-dismissable alert-warning">
+<p>A continuación, te realizaremos una serie de preguntas para llenar tus datos médicos. Es importante que tengas a tu lado a algún familiar mayor que conozca tu historial clínico para ser lo más preciso posible. Cuando estés listo, presiona el botón que está abajo.</p>
+</div>
 <%= simple_form_for(@fichas_medica) do |f| %>
 <% if @fichas_medica.errors.any? %>
   <div id="error_explanation">
@@ -10,11 +14,10 @@
     </ul>
   </div>
 <% end %>
-
 	<% if usuario_signed_in? %>
-	    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+	  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
 		<%= f.submit %>
-	<% end %>
+  <% end %>
 
 
 <% end %>

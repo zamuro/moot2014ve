@@ -7,10 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="alert alert-dismissable alert-info">
 	<div>
 		<%= link_to "Menú principal", root_path %>
 	</div>
-	<div id="user_nav">  
+	<div >
 	  <% if usuario_signed_in? %>  
 	    Autenticado como <%= current_usuario.email %>. ¿No eres tú?  
 	    <!-- <%= link_to "Salir", destroy_usuario_session_path, :method => :delete %>  !-->
@@ -20,6 +21,7 @@
 	    <%= link_to "Entrar", new_usuario_session_path %>  
 	  <% end %>  
 	</div> 
+</div>
 <%= yield %>
 
 </body>

@@ -1,4 +1,10 @@
 Moot::Application.routes.draw do
+  resources :vacunas
+
+  resources :padecimientos
+
+  resources :alergies
+
   get "alergias/new"
   get "alergias/index"
   get "alergias/show"
