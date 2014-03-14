@@ -1,17 +1,92 @@
-<%= form_for(@vacuna) do |f| %>
-  <% if @vacuna.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vacuna.errors.count, "error") %> prohibited this vacuna from being saved:</h2>
+<%= simple_form_for(@vacuna) do |f| %>
+<% f.input :tetanos, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :tiroidea, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :gripe, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.text_field :otras %>
+<% if @vacuna.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@vacuna.errors.count, "error") %> prohibited this vacuna from being saved:</h2>
 
-      <ul>
-      <% @vacuna.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @vacuna.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="tetanos"> Tétanos
+          </label>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="sarampion"> Sarampión
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="rubeola"> Rubeola
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="tiroidea"> Fiebre Tifoidea
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="hepatitis"> Hepatitis
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="gripe"> Influenza
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="otras" class="col-lg-2 control-label">Otras vacunas</label>
+        <input type="text" class="form-control" id="otras" placeholder="Ej.: Fiebre Amarilla, Meningitis">
+        <span class="help-block">Cualquier otra vacuna que hayas recibido</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
 <% end %>

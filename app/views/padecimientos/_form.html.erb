@@ -1,17 +1,180 @@
-<%= form_for(@padecimiento) do |f| %>
-  <% if @padecimiento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@padecimiento.errors.count, "error") %> prohibited this padecimiento from being saved:</h2>
+<%= simple_form_for(@padecimiento) do |f| %>
+<% f.input :lechina, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :apendicitis, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :insomnio, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :paperas, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :sonambulismo, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :estrenimiento, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :acidez, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :ulcera, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :asma, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :reflujo, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :bulimia, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :hiv, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.text_field :otras %>
+<% if @padecimiento.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@padecimiento.errors.count, "error") %> prohibited this padecimiento from being saved:</h2>
 
-      <ul>
-      <% @padecimiento.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul>
+    <% @padecimiento.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="lechina"> Lechina
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="hepatitis"> Hepatitis
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="rubeola"> Rubeola
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="apendicitis"> Apendicitis
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="sarampion"> Sarampión
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="insomnio"> Insomnio
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="paperas"> Paperas
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="sonambulismo"> Sonambulismo
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="estrenimiento"> Estreñimiento
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="acidez"> Acidez
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="ulcera"> Úlcera
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="asma"> Asma
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="reflujo"> Reflujo Gástrico
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="bulimia"> Bulimia
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="hiv"> VIH-SIDA
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="otras" class="col-lg-2 control-label">Otras alergias</label>
+        <input type="text" class="form-control" id="otras" placeholder="Ej.: Culebrilla, Mal de Ojo">
+        <span class="help-block">Cualquier otro padecimiento que tengas</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </fieldset>
+    </form>
+    <% end %>

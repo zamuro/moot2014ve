@@ -1,17 +1,84 @@
-<%= form_for(@alergy) do |f| %>
-  <% if @alergy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@alergy.errors.count, "error") %> prohibited this alergy from being saved:</h2>
+<%= simple_form_for(@alergy) do |f| %>
+<% f.input :alimentos, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :picaduras, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.input :medicinas, as: :boolean, checked_value: true, unchecked_value: false %>
+<% f.text_field :detalle_alimento %>
+<% f.text_field :detalle_picaduras %>
+<% f.text_field :detalle_medicinas %>
+<% f.text_field :otras %>
+<% if @alergy.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@alergy.errors.count, "error") %> prohibited this alergy from being saved:</h2>
 
-      <ul>
-      <% @alergy.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @alergy.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="alimentos"> Alimentos
+          </label>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="detalle_alimento" class="col-lg-2 control-label">Tipos de Alimentos</label>
+        <input type="text" class="form-control" id="detalle_alimento" placeholder="Ej.: Maní, Nueces">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="picaduras"> Picaduras
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="detalle_picaduras" class="col-lg-2 control-label">Tipos de Picaduras</label>
+        <input type="text" class="form-control" id="detalle_picaduras" placeholder="Ej.: Mosquitos, Abejas">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="medicinas"> Medicinas
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="detalle_medicinas" class="col-lg-2 control-label">Tipos de Medicinas</label>
+        <input type="text" class="form-control" id="detalle_medicinas" placeholder="Ej.: Acetaminofén, Aspirina">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="otras" class="col-lg-2 control-label">Otras alergias</label>
+        <input type="text" class="form-control" id="otras" placeholder="Ej.: Gatos, Hojas de Cují">
+        <span class="help-block">Cualquier otra cosa a la que le tengas alergia</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
 <% end %>

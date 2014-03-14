@@ -69,6 +69,6 @@ class AlergiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def alergy_params
-      params[:alergy]
+      params.fetch(:alergy).permit(:fichas_medica_id, :alimentos, :detalle_alimento, :medicinas, :detalle_medicinas, :picaduras, :detalle_picaduras, :otras)
     end
 end

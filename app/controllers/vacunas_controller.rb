@@ -69,6 +69,6 @@ class VacunasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacuna_params
-      params[:vacuna]
+      params.fetch(:vacuna).permit(:fichas_medica_id, :tetanos, :sarampion, :rubeola, :tiroidea, :hepatitis, :gripe, :otras)
     end
 end
