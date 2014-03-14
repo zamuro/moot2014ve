@@ -28,7 +28,7 @@ class EnfermedadesController < ApplicationController
 
     respond_to do |format|
       if @enfermedade.save
-        format.html { redirect_to "/alergias/new", notice: 'Ahora, por favor dinos a qué eres alérgico' }
+        format.html { redirect_to new_padecimiento_path, notice: 'Ahora, por favor dinos a qué eres alérgico' }
 
       else
         format.html { render action: 'new' }

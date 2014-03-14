@@ -11,7 +11,7 @@ class FichasMedicasController < ApplicationController
   	@fichas_medica = FichasMedica.new(fichas_medica_params)
     respond_to do |format|
       if @fichas_medica.save
-        format.html { redirect_to root_url, notice: 'Datos usuario was successfully created.' }
+        format.html { redirect_to new_alergy_path, notice: 'Creado tu registro de ficha médica' }
         
       else
         format.html { render action: 'new' }

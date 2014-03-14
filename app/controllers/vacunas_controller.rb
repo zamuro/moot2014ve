@@ -28,8 +28,8 @@ class VacunasController < ApplicationController
 
     respond_to do |format|
       if @vacuna.save
-        format.html { redirect_to @vacuna, notice: 'Vacuna was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @vacuna }
+        format.html { redirect_to new_tipo_sangre_path, notice: 'Vacuna was successfully created.' }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @vacuna.errors, status: :unprocessable_entity }

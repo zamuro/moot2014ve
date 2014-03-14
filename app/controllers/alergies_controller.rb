@@ -28,8 +28,8 @@ class AlergiesController < ApplicationController
 
     respond_to do |format|
       if @alergy.save
-        format.html { redirect_to @alergy, notice: 'Alergy was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @alergy }
+        format.html { redirect_to new_enfermedade_path, notice: 'Alergy was successfully created.' }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @alergy.errors, status: :unprocessable_entity }

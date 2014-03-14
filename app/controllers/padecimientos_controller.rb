@@ -28,8 +28,8 @@ class PadecimientosController < ApplicationController
 
     respond_to do |format|
       if @padecimiento.save
-        format.html { redirect_to @padecimiento, notice: 'Padecimiento was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @padecimiento }
+        format.html { redirect_to new_vacuna_path, notice: 'Padecimiento was successfully created.' }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @padecimiento.errors, status: :unprocessable_entity }

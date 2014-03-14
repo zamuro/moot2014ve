@@ -1,6 +1,7 @@
 Moot::Application.routes.draw do
+  get "tipo_sangres/new"
   resources :vacunas
-
+  resources :tipo_sangres
   resources :padecimientos
 
   resources :alergies
