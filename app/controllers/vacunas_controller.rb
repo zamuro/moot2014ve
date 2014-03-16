@@ -1,6 +1,6 @@
 class VacunasController < ApplicationController
   before_action :set_vacuna, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_usuario!
   # GET /vacunas
   # GET /vacunas.json
   def index
@@ -69,6 +69,6 @@ class VacunasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacuna_params
-      params.fetch(:vacuna).permit(:fichas_medica_id, :tetanos, :sarampion, :rubeola, :tiroidea, :hepatitis, :gripe, :otras)
+      params.fetch(:vacuna).permit(:usuario_id, :tetanos, :sarampion, :rubeola, :tiroidea, :hepatitis, :gripe, :otras)
     end
 end

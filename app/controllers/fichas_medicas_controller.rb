@@ -1,4 +1,5 @@
 class FichasMedicasController < ApplicationController
+  before_filter :authenticate_usuario!
   def index
   	@fichas_medica = FichasMedicas.all
   end

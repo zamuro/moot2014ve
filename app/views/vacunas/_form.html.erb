@@ -1,4 +1,7 @@
 <%= simple_form_for(@vacuna) do |f| %>
+<% if usuario_signed_in? %>
+  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
 <% f.input :tetanos, as: :boolean, checked_value: true, unchecked_value: false %>
 <% f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
 <% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>

@@ -1,5 +1,6 @@
 class PadecimientosController < ApplicationController
   before_action :set_padecimiento, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /padecimientos
   # GET /padecimientos.json
@@ -69,6 +70,6 @@ class PadecimientosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def padecimiento_params
-      params.fetch(:padecimiento).permit(:fichas_medica_id, :lechina, :hepatitis, :rubeola, :apendicitis, :sarampion, :insomnio, :paperas, :sonambulismo, :estrenimiento, :acidez, :ulcera, :asma, :reflujo, :bulimia, :hiv, :otras)
+      params.fetch(:padecimiento).permit(:usuario_id, :lechina, :hepatitis, :rubeola, :apendicitis, :sarampion, :insomnio, :paperas, :sonambulismo, :estrenimiento, :acidez, :ulcera, :asma, :reflujo, :bulimia, :hiv, :otras)
     end
 end

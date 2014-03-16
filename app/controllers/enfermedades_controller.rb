@@ -1,5 +1,6 @@
 class EnfermedadesController < ApplicationController
   before_action :set_enfermedade, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /enfermedades
   # GET /enfermedades.json
@@ -69,6 +70,6 @@ class EnfermedadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enfermedade_params
-      params.fetch(:enfermedade).permit(:diabetes, :cancer, :cardiopatias, :hemofilia, :asma, :amigdalitis, :hipotension, :hipertension, :epilepsia, :otras, :sinusitis)
+      params.fetch(:enfermedade).permit(:usuario_id, :diabetes, :cancer, :cardiopatias, :hemofilia, :asma, :amigdalitis, :hipotension, :hipertension, :epilepsia, :otras, :sinusitis)
     end
 end

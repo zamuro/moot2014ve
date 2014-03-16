@@ -1,5 +1,6 @@
 class DatosUsuariosController < ApplicationController
   before_action :set_datos_usuario, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /datos_usuarios
   # GET /datos_usuarios.json
@@ -28,8 +29,8 @@ class DatosUsuariosController < ApplicationController
 
     respond_to do |format|
       if @datos_usuario.save
-        format.html { redirect_to @datos_usuario, notice: 'Datos usuario was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @datos_usuario }
+        format.html { redirect_to new_fichas_medica_path, notice: 'Datos usuario was successfully created.' }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @datos_usuario.errors, status: :unprocessable_entity }

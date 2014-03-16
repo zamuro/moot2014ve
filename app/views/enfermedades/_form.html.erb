@@ -12,6 +12,9 @@
   <% end %>
   <h2>Favor llene los datos según corresponda</h2>
   ¿Padece o ha padecido de alguna de estas enfermedades?
+  <% if usuario_signed_in? %>
+    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+  <% end %>
 <div class="field">
   Diabetes
   <%= f.input :diabetes, as: :boolean, checked_value: true, unchecked_value: false %>

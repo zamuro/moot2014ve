@@ -1,5 +1,6 @@
 class DatosRegistrosController < ApplicationController
   before_action :set_datos_registro, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /datos_registros
   # GET /datos_registros.json
@@ -28,8 +29,8 @@ class DatosRegistrosController < ApplicationController
     
     respond_to do |format|
       if @datos_registro.save
-        format.html { redirect_to @datos_registro, notice: 'Datos registro was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @datos_registro }
+        format.html { redirect_to new_datos_usuario_path, notice: 'Datos registro was successfully created.' }
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @datos_registro.errors, status: :unprocessable_entity }

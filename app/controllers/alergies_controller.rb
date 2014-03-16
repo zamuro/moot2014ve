@@ -1,5 +1,6 @@
 class AlergiesController < ApplicationController
   before_action :set_alergy, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /alergies
   # GET /alergies.json
@@ -69,6 +70,6 @@ class AlergiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def alergy_params
-      params.fetch(:alergy).permit(:fichas_medica_id, :alimentos, :detalle_alimento, :medicinas, :detalle_medicinas, :picaduras, :detalle_picaduras, :otras)
+      params.require(:alergy).permit(:usuario_id, :alimentos, :detalle_alimento, :medicinas, :detalle_medicinas, :picaduras, :detalle_picaduras, :otras)
     end
 end

@@ -1,4 +1,7 @@
 <%= simple_form_for(@padecimiento) do |f| %>
+<% if usuario_signed_in? %>
+  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
 <% f.input :lechina, as: :boolean, checked_value: true, unchecked_value: false %>
 <% f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
 <% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
