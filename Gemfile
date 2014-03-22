@@ -55,5 +55,7 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'rails_12factor'
+gem 'prawn'
+gem 'prawn_rails'
 
 ruby "2.0.0"

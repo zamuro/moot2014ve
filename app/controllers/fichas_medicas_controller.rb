@@ -4,6 +4,9 @@ class FichasMedicasController < ApplicationController
   	@fichas_medica = FichasMedicas.all
   end
 
+  def show
+  end
+
   def new
   	@fichas_medica = FichasMedica.new
   end

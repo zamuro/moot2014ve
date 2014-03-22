@@ -1,6 +1,7 @@
 <h1>CAREPAS 2014</h1>
 <ol>
 	<li><%= link_to 'Registra tus datos', new_datos_registro_path %></li>
+	<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf") %></li>
 	<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete %></li>
 </ol>
 
