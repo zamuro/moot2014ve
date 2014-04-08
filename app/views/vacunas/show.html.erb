@@ -1,4 +1,65 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Vacunas</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+  		<td>
+        <% if @vacuna.sarampion == true%>
+          Sarampión
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @vacuna.rubeola == true%>
+          Rubeola
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @vacuna.tiroidea == true%>
+          Tifoidea
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @vacuna.tetanos == true%>
+          Tétanos
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @vacuna.hepatitis == true%>
+          Hepatitis
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @vacuna.gripe == true%>
+          Gripe
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Otras:
+        <%= @vacuna.otras %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 
 <%= link_to 'Edit', edit_vacuna_path(@vacuna) %> |
 <%= link_to 'Back', vacunas_path %>
+

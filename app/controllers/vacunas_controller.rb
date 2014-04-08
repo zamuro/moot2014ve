@@ -12,6 +12,7 @@ class VacunasController < ApplicationController
   def show
   end
 
+
   # GET /vacunas/new
   def new
     @vacuna = Vacuna.new
@@ -69,6 +70,6 @@ class VacunasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacuna_params
-      params.fetch(:vacuna).permit(:usuario_id, :tetanos, :sarampion, :rubeola, :tiroidea, :hepatitis, :gripe, :otras)
+      params.require(:vacuna).permit(:usuario_id, :tetanos, :sarampion, :rubeola, :tiroidea, :hepatitis, :gripe, :otras)
     end
 end
