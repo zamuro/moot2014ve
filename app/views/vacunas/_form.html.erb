@@ -1,14 +1,4 @@
 <%= simple_form_for(@vacuna) do |f| %>
-<% if usuario_signed_in? %>
-  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
-<% end %>
-<% f.input :tetanos, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :tiroidea, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :gripe, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.text_field :otras %>
 <% if @vacuna.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@vacuna.errors.count, "error") %> prohibited this vacuna from being saved:</h2>
@@ -22,65 +12,54 @@
 <% end %>
 <form class="form-horizontal">
   <fieldset>
+<% if usuario_signed_in? %>
+<%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="tetanos"> Tétanos
-          </label>
+<%= f.input :tetanos, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="sarampion"> Sarampión
-          </label>
+<%= f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="rubeola"> Rubeola
-          </label>
+<%= f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="tiroidea"> Fiebre Tifoidea
-          </label>
+<%= f.input :tiroidea, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="hepatitis"> Hepatitis
-          </label>
+<%= f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="gripe"> Influenza
-          </label>
+<%= f.input :gripe, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-        <label for="otras" class="col-lg-2 control-label">Otras vacunas</label>
-        <input type="text" class="form-control" id="otras" placeholder="Ej.: Fiebre Amarilla, Meningitis">
-        <span class="help-block">Cualquier otra vacuna que hayas recibido</span>
+<%= f.text_field :otras %>
       </div>
     </div>
     <div class="form-group">
