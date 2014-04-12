@@ -1,4 +1,6 @@
 Moot::Application.routes.draw do
+  resources :pagos
+
   get "inicio/index"
   get "fichas_medicas/show"
   resources :datos_usuarios

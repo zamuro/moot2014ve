@@ -1,0 +1,33 @@
+<h1>Listing pagos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Voucher</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagos.each do |pago| %>
+      <tr>
+        <td>
+          <% if usuario_signed_in? %>
+            <%= pago.usuario.email %>
+            <% end %>
+        </td>
+        <td><%= pago.voucher %></td>
+        <td><%= pago.monto %></td>
+        <td><%= pago.created_at %></td>
+        <td><%= link_to 'Show', pago %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pago', new_pago_path %>

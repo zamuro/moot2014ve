@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @pago.usuario.email %>
+</p>
+
+<p>
+  <strong>Voucher:</strong>
+  <%= @pago.voucher %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @pago.monto %>
+</p>
+
+<%= link_to 'Edit', edit_pago_path(@pago) %> |
+<%= link_to 'Back', pagos_path %>

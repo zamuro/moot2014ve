@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212210722) do
+ActiveRecord::Schema.define(version: 20140412020233) do
 
-  create_table "alergias", force: true do |t|
-    t.integer "fichas_medica_id"
+  create_table "alergies", force: true do |t|
+    t.integer "usuario_id"
     t.boolean "alimentos"
     t.text    "detalle_alimento"
     t.boolean "picaduras"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140212210722) do
     t.string   "contacto2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tipo_sangre_id"
   end
 
   create_table "distritos", force: true do |t|
@@ -58,8 +59,8 @@ ActiveRecord::Schema.define(version: 20140212210722) do
     t.string  "distrito",  limit: 64
   end
 
-  create_table "enfermedads", force: true do |t|
-    t.integer "fichas_medica_id"
+  create_table "enfermedades", force: true do |t|
+    t.integer "usuario_id"
     t.boolean "diabetes"
     t.boolean "cancer"
     t.boolean "cardiopatias"
@@ -99,7 +100,7 @@ ActiveRecord::Schema.define(version: 20140212210722) do
   end
 
   create_table "padecimientos", force: true do |t|
-    t.integer "fichas_medica_id"
+    t.integer "usuario_id"
     t.boolean "lechina"
     t.boolean "hepatitis"
     t.boolean "rubeola"
@@ -118,6 +119,14 @@ ActiveRecord::Schema.define(version: 20140212210722) do
     t.text    "otras"
   end
 
+  create_table "pagos", force: true do |t|
+    t.integer  "usuario_id"
+    t.integer  "voucher"
+    t.decimal  "monto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ramas", force: true do |t|
     t.string "rama", limit: 12
   end
@@ -126,7 +135,7 @@ ActiveRecord::Schema.define(version: 20140212210722) do
     t.string "region", limit: 32
   end
 
-  create_table "tiposangres", force: true do |t|
+  create_table "tipo_sangres", force: true do |t|
     t.string "tipo", limit: 6
   end
 
@@ -159,7 +168,7 @@ ActiveRecord::Schema.define(version: 20140212210722) do
   end
 
   create_table "vacunas", force: true do |t|
-    t.integer "fichas_medica_id"
+    t.integer "usuario_id"
     t.boolean "tetanos"
     t.boolean "sarampion"
     t.boolean "rubeola"

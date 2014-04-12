@@ -4,6 +4,7 @@
 		<li><%= link_to 'Registra tus datos', new_datos_registro_path %></li>
 		<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf") %></li>
 		<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete %></li>
+		<li><%= link_to "Registra tu pago", new_pago_path %></li>
 	<% else %>
 		<li>Si no estás registrado: <%= link_to "¡Regístrate!", new_usuario_registration_path %>, es muy sencillo.</li>
 		<li>Si ya estás registrado: <%= link_to "Inicia sesión", new_usuario_session_path %> y llena tus datos.</li> 
