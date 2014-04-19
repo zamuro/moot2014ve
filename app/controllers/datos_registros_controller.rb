@@ -2,6 +2,7 @@ class DatosRegistrosController < ApplicationController
   before_action :set_datos_registro, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
 
+
   # GET /datos_registros
   # GET /datos_registros.json
   def index
