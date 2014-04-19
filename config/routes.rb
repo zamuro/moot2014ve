@@ -1,6 +1,7 @@
 Moot::Application.routes.draw do
+  devise_for :admins
   resources :pagos
-
+  get "inicio/prohibido"
   get "inicio/index"
   get "fichas_medicas/show"
   resources :datos_usuarios

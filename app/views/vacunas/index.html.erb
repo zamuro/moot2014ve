@@ -1,3 +1,4 @@
+<% if admin_signed_in? %>
 <h1>Listing vacunas</h1>
 
 <table class="table table-striped table-hover ">
@@ -24,3 +25,8 @@
 <br>
 
 <%= link_to 'New Vacuna', new_vacuna_path %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>
+

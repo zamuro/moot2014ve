@@ -1,3 +1,4 @@
+<% if admin_signed_in? %>
 <h1>Datos de contacto de usuarios</h1>
 
 <table class="table table-striped table-hover ">
@@ -38,3 +39,8 @@
 
 <%= link_to 'Registrar nuevos datos', new_datos_usuario_path %>
 <%= link_to "Menú Principal", root_path %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>
+

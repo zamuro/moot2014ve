@@ -1,6 +1,11 @@
+<% if admin_signed_in? %>
 <h1>Editing datos_registro</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @datos_registro %> |
 <%= link_to 'Back', datos_registros_path %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

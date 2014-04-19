@@ -1,3 +1,4 @@
+<% if usuario_signed_in? or admin_signed_in? %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -48,3 +49,7 @@
 
 <%= link_to 'Edit', edit_datos_registro_path(@datos_registro) %> |
 <%= link_to 'Back', datos_registros_path %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

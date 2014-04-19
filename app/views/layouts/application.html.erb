@@ -14,8 +14,15 @@
 			Autenticado como <%= current_usuario.email %>. ¿No eres tú?
     		<%= link_to "Salir", destroy_usuario_session_path, :method => :delete %>  
   		<% else %>  
-		    <%= link_to "Registrarse", new_usuario_registration_path %> or  
-		    <%= link_to "Entrar", new_usuario_session_path %>  
+	  		<ul>
+	  			<li>
+				    Si eres receptor, <%= link_to "Regístrate", new_usuario_registration_path %> or  
+				    <%= link_to "Entra", new_usuario_session_path %>  
+				</li>
+				<li>
+					Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path %>
+				</li>
+			</ul>
  		<% end %>  
  	</div>
 	</div>

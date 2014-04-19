@@ -1,6 +1,11 @@
+<% if admin_signed_in? %>
 <h1>Editing padecimiento</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @padecimiento %> |
 <%= link_to 'Back', padecimientos_path %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>
