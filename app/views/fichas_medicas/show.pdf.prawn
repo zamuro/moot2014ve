@@ -6,7 +6,11 @@
 @vacuna = Vacuna.find(params[:id])
 
 prawn_document(:page_size => "A4") do |pdf|
+<<<<<<< HEAD
 	pdf.text "Planilla de registro Moot Nacional 2014", :style => :bold, :size => 24, :align => :center
+=======
+	pdf.text "Planilla de inscripción MOOT NACIONAL 2014", :style => :bold, :size => 20, :align => :center
+>>>>>>> 0aa21da1c45758d94960326bf15174d57c0794a9
 	pdf.move_down(10)
 	pdf.text "Datos del participante", :size => 16, :align => :left
 	pdf.table([
@@ -22,252 +26,38 @@ prawn_document(:page_size => "A4") do |pdf|
 		["Dirección de contacto", "#{@datos_usuario.direccion2}", "Teléfono de contacto", "#{@datos_usuario.tel2}"],
 		["Correo electrónico", "#{@datos_usuario.correo}", "Contacto principal", "#{@datos_usuario.contacto1}"],
 		],
-	:width => 500)
+	:width => 500, :cell_style => {:width => 125})
 	pdf.move_down(20)
 	pdf.text "Ficha médica", :size => 16, :align => :left
 	pdf.text "Alergias", :size => 14
-	pdf.table([ 
-		["Alimentos", "#{@alergia.detalle_alimento}", "Picaduras", "#{@alergia.detalle_picaduras}"],
-		["Medicinas", "#{@alergia.detalle_medicinas}", "Otros", "#{@alergia.otras}"],
-		],
-	:width => 500)
+	for alergia in @alergia.attributes.keys.drop(2)
+		pdf.table([ 
+			["#{alergia.humanize}", "#{@alergia.attributes[alergia].to_s}"]
+			],
+		:width => 500, :cell_style => {:width => 250})
+	end
 	pdf.move_down(10)
 	pdf.text "Vacunas", :size => 14
-	pdf.table([ 
-		["Sarampión, #{
-		if @vacuna.sarampion == true
-			"+"
-		else
-			"-"
-		end
-			}", 
-		"Fiebre Tifoidea: #{
-		if @vacuna.tiroidea == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Hepatitis: #{
-		if @vacuna.hepatitis == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Influenza: #{
-		if @vacuna.gripe == true
-			"+"
-		else
-			"-"			
-		end
-		}"
-		],
-		["Rubeola: #{
-		if @vacuna.rubeola == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Tétanos: #{
-		if @vacuna.tetanos == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Otras: #{@vacuna.otras}"],
-		],
-	:width => 500)
+	for vacuna in @vacuna.attributes.keys.drop(2)
+		pdf.table([
+			["#{vacuna.humanize}", "#{@vacuna.attributes[vacuna].to_s}"]
+			],
+		:width => 500, :cell_style => {:width => 250})
+	end
 	pdf.move_down(10)
 	pdf.text "Padecimientos", :size => 14
+	for padecimiento in @padecimiento.attributes.keys.drop(2)
 	pdf.table([ 
-		["Lechina: #{
-		if @padecimiento.lechina == true
-			"+"
-		else
-			"-"
-		end
-			}", 
-		"Hepatitis: #{
-		if @padecimiento.hepatitis == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Rubeola: #{
-		if @padecimiento.rubeola == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Apendicitis: #{
-		if @padecimiento.apendicitis == true
-			"+"
-		else
-			"-"			
-		end
-		}"
+		["#{padecimiento.humanize}", "#{@padecimiento.attributes[padecimiento].to_s}"],
 		],
-		["Sarampión: #{
-		if @padecimiento.sarampion == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Insomnio: #{
-		if @padecimiento.insomnio == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Paperas: #{
-		if @padecimiento.paperas == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Sonambulismo: #{
-		if @padecimiento.sonambulismo == true
-			"+"
-		else
-			"-"			
-		end
-		}"],
-		["Asma: #{
-		if @padecimiento.asma == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Estreñimiento: #{
-		if @padecimiento.estrenimiento == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Acidez: #{
-		if @padecimiento.acidez == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Úlcera: #{
-		if @padecimiento.ulcera == true
-			"+"
-		else
-			"-"			
-		end
-		}"],
-		["Reflujo: #{
-		if @padecimiento.reflujo == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Bulimia: #{
-		if @padecimiento.bulimia == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"HIV: #{
-		if @padecimiento.hiv == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Otras: #{@padecimiento.otras}"],
-		],
-	:width => 500)
+	:width => 500, :cell_style => {:width => 250})
+	end
 pdf.move_down(10)
 pdf.text "Enfermedades", :size => 14
-pdf.table([		
-	["Diabetes, #{
-		if @enfermedad.diabetes == true
-			"+"
-		else
-			"-"
-		end
-			}", 
-		"Cáncer: #{
-		if @enfermedad.cancer == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Cardiopatías: #{
-		if @enfermedad.cardiopatias == true
-			"+"
-		else
-			"-"
-		end
-		}", 
-		"Hemofilia: #{
-		if @enfermedad.hemofilia == true
-			"+"
-		else
-			"-"			
-		end
-		}"
+for enfermedad in @enfermedad.attributes.keys.drop(2)
+	pdf.table([ 
+		["#{enfermedad.humanize}", "#{@enfermedad.attributes[enfermedad].to_s}"],
 		],
-		["Asma: #{
-		if @enfermedad.asma == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Amigdalitis: #{
-		if @enfermedad.amigdalitis == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Tensión baja: #{
-		if @enfermedad.hipotension == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Tensión alta: #{
-		if @enfermedad.hipertension == true
-			"+"
-		else
-			"-"
-		end
-		}"],
-		[
-		"Epilepsia: #{
-		if @enfermedad.epilepsia == true
-			"+"
-		else
-			"-"			
-		end
-		}", 
-		"Sinusitis: #{
-		if @enfermedad.sinusitis == true
-			"+"
-		else
-			"-"			
-		end
-		}",
-		"Otras: #{@enfermedad.otras}"],
-		],
-	:width => 500)
+	:width => 500, :cell_style => {:width => 250})
+end
 end
