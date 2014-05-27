@@ -2,7 +2,7 @@
 <ul>
 	<% if usuario_signed_in? %>
 		<li><%= link_to 'Registra tus datos', new_datos_registro_path %></li>
-		<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf") %></li>
+		<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank' %></li>
 		<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete %></li>
 		<li><%= link_to "Registra tu pago", new_pago_path %></li>
 	<% else %>
