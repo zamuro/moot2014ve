@@ -6,11 +6,7 @@
 @vacuna = Vacuna.find(params[:id])
 
 prawn_document(:page_size => "A4") do |pdf|
-<<<<<<< HEAD
-	pdf.text "Planilla de registro Moot Nacional 2014", :style => :bold, :size => 24, :align => :center
-=======
 	pdf.text "Planilla de inscripción MOOT NACIONAL 2014", :style => :bold, :size => 20, :align => :center
->>>>>>> 0aa21da1c45758d94960326bf15174d57c0794a9
 	pdf.move_down(10)
 	pdf.text "Datos del participante", :size => 16, :align => :left
 	pdf.table([
