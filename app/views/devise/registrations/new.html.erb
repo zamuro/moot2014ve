@@ -6,30 +6,30 @@
 <form class="form-horizontal">
 	<fieldset>
 		<div class="form-group">
-			<div class="col-lg-10">
-				Correo
+			<div class="col-xs-10">
+				<label class="col-xs-3">Correo</label>
 				<%= f.text_field :email, :required => true, :autofocus => true %>
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-lg-10">
-				Contraseña
-				<%= f.input_field :password, :required => true, :autofocus => true %>
-			</div>
+			<div class="col-xs-10">
+				<label class="col-xs-3">Contraseña</label>
+				<%= f.input_field :password, :required => true, :autofocus => true, :size => 20 %>
+			</div>	
 		</div>
 		<div class="form-group">
-			<div class="col-lg-10">
-				Confirma tu contraseña
+			<div class="col-xs-10">
+				<label class="col-xs-3"> Confirma tu contraseña</label>
 				<%= f.input_field :password_confirmation, :required => true, :autofocus => true %>
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-lg-10">
-				<%= f.button :submit, "Sign up" %>
+			<div class="col-xs-10">
+				<%= f.button :submit, "Regístrate" %>
 			</div>
 		</div>
 </fieldset>
 </form>
 		<% end %>
 
-		<%= render "devise/shared/links" %>
+

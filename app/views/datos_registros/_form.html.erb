@@ -14,47 +14,40 @@
   <% if usuario_signed_in? %>
     <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
   <% end %>
-
+<form class="form-horizontal">
 <div class="form-group">
-  Nombre completo
+  <label class="col-xs-3">Nombre completo</label>
   <%= f.text_field :nombre %>
   </div>
   <div class="form-group">
-    Cédula de Identidad
+    <label class="col-xs-3">Cédula de Identidad</label>
   <%= f.text_field :ci -%>
-No coloques puntos ni letras
+<span class="help-block">No coloques puntos ni letras</span>
     </div>
   <div class="form-group">
-    Número de Credencial
-<%= f.text_field :credencial %>
-No coloques puntos ni letras
+    <label class="col-xs-3">Número de Credencial</label>
+    <%= f.text_field :credencial %>
+    <span class="help-block">No coloques puntos ni letras</span>
 </div>
 <div class="form-group">
-  Fecha de Nacimiento
+  <label class="col-xs-3">Fecha de Nacimiento</label>
   <%= f.text_field :fechaNac %>
-  En formato DD/MM/AAAA. Ejemplo: 10/10/2000
+  <span class="help-block">En formato DD/MM/AAAA. Ejemplo: 10/10/2000</span>
 </div>
   <div class="form-group">
-    Region
+    <label class="col-xs-3">Región</label>
   <%= f.collection_select :region_id, Region.all, :id, :region %>
   </div>
   <div class="form-group">
-    Distrito
+    <label class="col-xs-3">Distrito</label>
   <%= f.collection_select :distrito_id, Distrito.all, :id, :distrito %>
   </div>
   <div class="form-group">
-    Grupo
+    <label class="col-xs-3">Grupo</label>
   <%= f.collection_select :grupo_id, Grupo.all, :id, :grupo %>
   </div>
   <div class="form-group">
-    Rama
-  <%= f.collection_select :rama_id, Rama.all, :id, :rama %>
-  </div>
-  <div class="form-group">
-    Unidad
-  <%= f.collection_select :unidad_id, Unidad.all, :id, :unidad %>
-  </div>
-  <div class="form-group">
-  <%= f.button :submit %>
+    <%= f.button :submit, "¡Listo!" %>
 </div>
+</form>
 <% end %>

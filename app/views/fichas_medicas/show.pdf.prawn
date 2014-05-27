@@ -6,7 +6,7 @@
 @vacuna = Vacuna.find(params[:id])
 
 prawn_document(:page_size => "A4") do |pdf|
-	pdf.text "Planilla de inscripción CAREPAS 2014 Región Metropolitana", :style => :bold, :size => 24, :align => :center
+	pdf.text "Planilla de registro Moot Nacional 2014", :style => :bold, :size => 24, :align => :center
 	pdf.move_down(10)
 	pdf.text "Datos del participante", :size => 16, :align => :left
 	pdf.table([
@@ -14,7 +14,7 @@ prawn_document(:page_size => "A4") do |pdf|
 	],
 	:width => 500)
 	pdf.table([
-		["Distrito", "#{@datos_registro.distrito.distrito}", "Grupo", "#{@datos_registro.grupo.grupo}", "Unidad", "#{@datos_registro.unidad.unidad}"],
+		["Distrito", "#{@datos_registro.distrito.distrito}", "Grupo", "#{@datos_registro.grupo.grupo}"],
 	],
 	:width => 500)
 	pdf.table([

@@ -1,5 +1,6 @@
 class DatosUsuariosController < ApplicationController
   before_action :set_datos_usuario, only: [:show, :edit, :update, :destroy]
+  #before_filter :authenticate_admin!
   before_filter :authenticate_usuario!
 
   # GET /datos_usuarios

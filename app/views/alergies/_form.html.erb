@@ -19,63 +19,56 @@
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-<%= f.input :alimentos, as: :boolean, checked_value: true, unchecked_value: false %>
-          </label>
+          <%= f.input :alimentos, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-        <label for="detalle_alimento" class="col-lg-2 control-label">Tipos de Alimentos</label>
-<%= f.text_field :detalle_alimento %>
-        
+        <label class="col-xs-3">Tipos de Alimentos</label>
+<label class="col-xs-3"><%= f.text_field :detalle_alimento %></label>
+        <span class="help-block">Ej.: Nueces, Legumbres</span>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-<%= f.input :picaduras, as: :boolean, checked_value: true, unchecked_value: false %>
-            
-          </label>
+            <%= f.input :picaduras, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-<%= f.text_field :detalle_picaduras %>
+        <label class="col-xs-3">Tipo de picaduras</label>
+        <label class="col-xs-3"><%= f.text_field :detalle_picaduras %></label>
         <span class="help-block">Ej.: Avispas, Abejas</span>
         </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
-          <label>
-<%= f.input :medicinas, as: :boolean, checked_value: true, unchecked_value: false %>
-            
-          </label>
+          <%= f.input :medicinas, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-        <label for="detalle_medicinas" class="col-lg-2 control-label">Tipos de Medicinas</label>
-   <%= f.text_field :detalle_medicinas %>
+        <label class="col-xs-3">Tipos de Medicinas</label>
+   <label class="col-xs-3"><%= f.text_field :detalle_medicinas %></label>
 <span class="help-block">Ej.: Acetaminofén, Aspirina</span>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-        Otras
-<%= f.text_field :otras %>
+        <label class="col-xs-3">Otras</label>
+<label class="col-xs-3"><%= f.text_field :otras %></label>
         <span class="help-block">Cualquier otra cosa a la que le tengas alergia</span>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="actions">
-          <%= f.submit %>
+          <%= f.button :submit, "Registrar" %>
         </div>
       </div>
     </div>

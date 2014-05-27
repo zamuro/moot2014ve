@@ -5,32 +5,24 @@
 	<fieldset>
 		<div class="form-group">
 			<div class="col-lg-10">
-				Correo electrónico
-				<%= f.text_field :email, :required => false, :autofocus => true %>
+				<label class="col-xs-3">Correo electrónico</label>
+				<%= f.text_field :email, :required => true, :autofocus => true %>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="col-lg-10">
-				Contraseña
-				<%= f.input :password, :required => false %>
+				<label class="col-xs-3">Contraseña</label>
+				<%= f.input_field :password, :required => true, :size => 20 %>
 			</div>
 		</div>
-
 		<div class="form-group">
 			<div class="col-lg-10">
-				<%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-			</div>
-		</div>
-
-
-		<div class="form-group">
-			<div class="col-lg-10">
-				<%= f.button :submit, "Sign in" %>
+				<%= f.button :submit, "Incia sesión" %>
 			</div>
 		</div>
 	</fieldset>
 </form>
 <% end %>
 
-<%= render "devise/shared/links" %>
+

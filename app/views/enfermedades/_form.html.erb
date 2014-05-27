@@ -15,51 +15,45 @@
   <% if usuario_signed_in? %>
     <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
   <% end %>
-<div class="field">
-  Diabetes
-  <%= f.input :diabetes, as: :boolean, checked_value: true, unchecked_value: false %>
+  <form class="form-horizontal">
+<div class="form-group">
+  <%= f.input :diabetes, as: :boolean, checked_value: true, unchecked_value: false, :label => "Diabetes" %>
 </div>
-<div class="field">
-  Cáncer
-  <%= f.input :cancer, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :cancer, as: :boolean, checked_value: true, unchecked_value: false, :label => "Cáncer" %>
 </div>
-<div class="field">
-  Cardiopatías
-  <%= f.input :cardiopatias, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :cardiopatias, as: :boolean, checked_value: true, unchecked_value: false, :label => "Cardiopatías (Enfermedades del corazón)" %>
 </div>
-<div class="field">
-  Hemofilia
-  <%= f.input :hemofilia, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :hemofilia, as: :boolean, checked_value: true, unchecked_value: false, :label => "Hemofilia" %>
 </div>
-<div class="field">
-  Asma
-  <%= f.input :asma, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :asma, as: :boolean, checked_value: true, unchecked_value: false, :label => "Asma" %>
 </div>
-<div class="field">
-  Amigdalitis
-  <%= f.input :amigdalitis, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :amigdalitis, as: :boolean, checked_value: true, unchecked_value: false, :label => "Amigdalitis" %>
 </div>
-<div class="field">
-  Hipotensión (tensión baja)
-  <%= f.input :hipotension, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :hipotension, as: :boolean, checked_value: true, unchecked_value: false, :label => "Tensión baja" %>
 </div>
-<div class="field">
-  Hipertensión (tensión alta)
-  <%= f.input :hipertension, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :hipertension, as: :boolean, checked_value: true, unchecked_value: false, :label => "Tensión alta" %>
 </div>
-<div class="field">
-  Epilepsia
-  <%= f.input :epilepsia, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :epilepsia, as: :boolean, checked_value: true, unchecked_value: false, :label => "Epilepsia" %>
 </div>
-<div class="field">
-  Sinusitis
-  <%= f.input :sinusitis, as: :boolean, checked_value: true, unchecked_value: false %>
+<div class="form-group">
+  <%= f.input :sinusitis, as: :boolean, checked_value: true, unchecked_value: false, :label => "Sinusitis" %>
 </div>
-<div class="field">
-  Si no aparece en la lista, favor detallarla en este campo
+<div class="form-group">
+  <label class="col-xs-3">Si no aparece en la lista, favor detallarla en este campo</label>
   <%= f.text_field :otras %>
 </div>
+<div class="form-group">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, "Registrar" %>
   </div>
+</div>
+</form>
 <% end %>
