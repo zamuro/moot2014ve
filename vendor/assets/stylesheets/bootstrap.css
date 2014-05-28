@@ -2033,8 +2033,7 @@ fieldset[disabled] .btn {
   opacity: .65;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: #fff;
   border-color: #ccc;
 }
 .btn-default:hover,
@@ -2042,8 +2041,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333;
-  background-color: #ebebeb;
+  color: #fff;
+  
   border-color: #adadad;
 }
 .btn-default:active,
@@ -3942,7 +3941,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #7a42a3;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -3954,7 +3953,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #777;
+  color: white;
 }
 .navbar-default .navbar-nav > li > a {
   color: #777;
@@ -3967,7 +3966,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
+  color: #000000;
   background-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > .disabled > a,
