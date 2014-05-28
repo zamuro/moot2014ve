@@ -2,7 +2,7 @@ class DatosRegistro < ActiveRecord::Base
 	self.primary_key = 'usuario_id'
 	validates_presence_of :ci, :distrito_id, :nombre, :region_id, :grupo_id
 	validates_uniqueness_of :ci, :usuario_id
-	validates :fechaNac, :date => { :after_or_equal_to => Date.parse("1993-07-24"), :before_or_equal_to => Date.parse("1998-07-24")}
+	validates :fechaNac, :date => { :after_or_equal_to => Date.parse("1993-01-01"), :before_or_equal_to => Date.parse("1998-12-31")}
 	belongs_to :nivel
 	belongs_to :region
 	belongs_to :distrito

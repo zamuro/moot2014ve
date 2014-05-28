@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_padecimiento_path(@padecimiento) %> |
-<%= link_to 'Back', padecimientos_path %>
+<%= link_to 'Back', root_path %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
   <p><%= link_to "Menú Principal", root_path %></p>

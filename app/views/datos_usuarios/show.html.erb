@@ -42,7 +42,7 @@
 </p>
 
 <%= link_to 'Edit', edit_datos_usuario_path(@datos_usuario) %> |
-<%= link_to 'Back', datos_usuarios_path %>
+<%= link_to 'Back', root_path %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
   <p><%= link_to "Menú Principal", root_path %></p>
