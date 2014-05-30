@@ -1,23 +1,4 @@
 <%= simple_form_for(@padecimiento) do |f| %>
-<% if usuario_signed_in? %>
-  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
-<% end %>
-<% f.input :lechina, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :apendicitis, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :insomnio, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :paperas, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :sonambulismo, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :estrenimiento, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :acidez, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :ulcera, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :asma, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :reflujo, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :bulimia, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.input :hiv, as: :boolean, checked_value: true, unchecked_value: false %>
-<% f.text_field :otras %>
 <% if @padecimiento.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@padecimiento.errors.count, "error") %> prohibited this padecimiento from being saved:</h2>
@@ -29,13 +10,17 @@
   </ul>
 </div>
 <% end %>
+<% if usuario_signed_in? %>
+  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
 <form class="form-horizontal">
   <fieldset>
     <div class="form-group">
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="lechina"> Lechina
+            
+<%= f.input :lechina, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -44,7 +29,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="hepatitis"> Hepatitis
+            
+<%= f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -53,7 +39,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="rubeola"> Rubeola
+            
+<%= f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -62,7 +49,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="apendicitis"> Apendicitis
+            
+<%= f.input :apendicitis, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -71,7 +59,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="sarampion"> Sarampión
+            
+<%= f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -80,7 +69,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="insomnio"> Insomnio
+            
+<%= f.input :insomnio, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -89,7 +79,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="paperas"> Paperas
+            
+<%= f.input :paperas, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -98,7 +89,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="sonambulismo"> Sonambulismo
+            
+<%= f.input :sonambulismo, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -107,7 +99,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="estrenimiento"> Estreñimiento
+            
+<%= f.input :estrenimiento, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -116,7 +109,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="acidez"> Acidez
+            
+<%= f.input :acidez, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -125,7 +119,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="ulcera"> Úlcera
+            
+<%= f.input :ulcera, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -134,7 +129,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="asma"> Asma
+            
+<%= f.input :asma, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -143,7 +139,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="reflujo"> Reflujo Gástrico
+            
+<%= f.input :reflujo, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -152,7 +149,8 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="bulimia"> Bulimia
+            
+<%= f.input :bulimia, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
@@ -161,15 +159,16 @@
       <div class="col-lg-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="hiv"> VIH-SIDA
+            
+<%= f.input :hiv, as: :boolean, checked_value: true, unchecked_value: false %>
           </label>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10">
-        <label for="otras" class="col-lg-2 control-label">Otras alergias</label>
-        <input type="text" class="form-control" id="otras" placeholder="Ej.: Culebrilla, Mal de Ojo">
+        <label for="otras" class="col-lg-2 control-label">Otros padecimientos</label>
+<%= f.text_field :otras %>
         <span class="help-block">Cualquier otro padecimiento que tengas</span>
       </div>
     </div>

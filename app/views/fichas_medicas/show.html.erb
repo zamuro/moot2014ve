@@ -1,0 +1,12 @@
+<h1>Fichas médicas</h1>
+<% @alergia = Alergy.find(params[:id]) %>
+<table class="table">
+	<% for alergia in @alergia.attributes.keys %>
+		<tr>
+			<td>
+				<div class="col-xs-2"> <%= alergia.humanize %></div> 
+				<div class="col-xs-4"><%= @alergia.attributes[alergia].to_s %></div>
+			</td>
+		</tr>
+	<% end %>
+</table>

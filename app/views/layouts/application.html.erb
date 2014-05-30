@@ -25,8 +25,30 @@
 			</ul>
  		<% end %>  
  	</div>
+	<div class="navbar navbar-default">
+		<div class="container-fluid">
+			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
+		
+			<div class="navbar-default navbar-text">
+				 <% if usuario_signed_in? %>  
+					Autenticado como <%= current_usuario.email %>. ¿No eres tú?
+					
+    					<%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
+    					
+  				<% else %>  
+	  				<ul>
+	  					<li>
+				    			Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
+						</li>
+						<li>
+							Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path, :class => "btn btn-primary btn-sm" %>
+						</li>
+					</ul>
+ 				<% end %>  
+ 			</div>
+ 		</div>
+>>>>>>> 26bfab4c8d9ed3f7e70bfc4e342b153c8f3f3c0c
 	</div>
 <%= yield %>
-
 </body>
 </html>
