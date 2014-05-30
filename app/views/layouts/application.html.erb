@@ -7,24 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="alert alert-dismissable alert-info">
-		<div class="list-group">
-			<p class="list-group-item-text"><%= link_to "Menú principal", root_path %></p>
-		<% if usuario_signed_in? %>  
-			Autenticado como <%= current_usuario.email %>. ¿No eres tú?
-    		<%= link_to "Salir", destroy_usuario_session_path, :method => :delete %>  
-  		<% else %>  
-	  		<ul>
-	  			<li>
-				    Si eres receptor, <%= link_to "Regístrate", new_usuario_registration_path %> or  
-				    <%= link_to "Entra", new_usuario_session_path %>  
-				</li>
-<!--				<li>
-					Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path %>
-				</li> -->
-			</ul>
- 		<% end %>  
- 	</div>
 	<div class="navbar navbar-default">
 		<div class="container-fluid">
 			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
@@ -40,14 +22,14 @@
 	  					<li>
 				    			Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
 						</li>
-						<li>
+<!--						<li>
 							Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path, :class => "btn btn-primary btn-sm" %>
-						</li>
+						</li> -->
 					</ul>
  				<% end %>  
  			</div>
  		</div>
->>>>>>> 26bfab4c8d9ed3f7e70bfc4e342b153c8f3f3c0c
+
 	</div>
 <%= yield %>
 </body>
