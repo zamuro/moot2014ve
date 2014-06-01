@@ -4,6 +4,7 @@ Moot::Application.routes.draw do
   get "inicio/prohibido"
   get "inicio/index"
   get "fichas_medicas/show"
+  get "inicio/portada"
   resources :datos_usuarios
   resources :datos_registros
   resources :fichas_medicas
