@@ -14,15 +14,3 @@ jQuery ->
     else
       $('#datos_registro_distrito_id').empty()
       $('#datos_registro_distrito_id').parent().hide()
-
-  grupos = $('#datos_registro_grupo_id').html()
-  $('#datos_registro_distrito_id').change ->
-    distritogrupo = $('#datos_registro_distrito_id :selected').text()
-    escaped_distrito = distrito.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
-    options = $(distritogrupo).filter("optgroup[label='#{escaped_distrito}']").html()
-    if options
-      $('#datos_registro_grupo_id').html(options)
-      $('#datos_registro_grupo_id').parent().show()
-    else
-      $('#datos_registro_grupo_id').empty()
-      $('#datos_registro_grupo_id').parent().hide()
