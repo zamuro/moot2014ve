@@ -40,7 +40,7 @@
   </div>
   <div class="form-group">
     <label class="col-xs-3">Distrito</label>
-    <%= f.grouped_collection_select :distrito_id, Region.order(:region), :distrito, :region, :id, :distrito, :include_blank => true  %>
+    <%= f.collection_select :distrito_id, Distrito.all.order(:distrito), :id, :distrito, :include_blank => true  %>
   </div>
   <div class="form-group">
     <label class="col-xs-3">Grupo</label>

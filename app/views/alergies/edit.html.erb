@@ -1,6 +1,15 @@
-<h1>Editing alergy</h1>
+<% if admin_signed_in? %>
+	<h1>Editar alergias</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @alergy %> |
-<%= link_to 'Back', alergies_path %>
+	<%= link_to 'Show', @alergy %> |
+	<%= link_to 'Back', alergies_path %>
+<% elsif usuario_signed_in? %>
+	<% if @alergy.usuario_id == current_usuario.id %>
+		<%= render 'form' %>
+	<% end %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+	  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

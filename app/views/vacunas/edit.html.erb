@@ -1,11 +1,15 @@
 <% if admin_signed_in? %>
-<h1>Editing vacuna</h1>
+	<h1>Editar vacunas</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @vacuna %> |
-<%= link_to 'Back', vacunas_path %>
+	<%= link_to 'Show', @vacuna %> |
+	<%= link_to 'Back', vacunas_path %>
+<% elsif usuario_signed_in? %>
+	<% if @vacuna.usuario_id == current_usuario.id %>
+		<%= render 'form' %>
+	<% end %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
-  <p><%= link_to "Menú Principal", root_path %></p>
+	  <p><%= link_to "Menú Principal", root_path %></p>
 <% end %>

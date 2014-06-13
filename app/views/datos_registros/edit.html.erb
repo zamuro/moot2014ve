@@ -6,10 +6,10 @@
 	<%= link_to 'Show', @datos_registro %> |
 	<%= link_to 'Back', datos_registros_path %>
 <% elsif usuario_signed_in? %>
-	<% if @datos_registro.usuario_id == current_usuario_id %>
+	<% if @datos_registro.id == current_usuario.id %>
 		<%= render 'form' %>
 	<% end %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
-  <p><%= link_to "Menú Principal", root_path %></p>
+	  <p><%= link_to "Menú Principal", root_path %></p>
 <% end %>
