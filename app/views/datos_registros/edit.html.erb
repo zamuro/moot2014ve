@@ -1,10 +1,14 @@
 <% if admin_signed_in? %>
-<h1>Editing datos_registro</h1>
+	<h1>Editing datos_registro</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @datos_registro %> |
-<%= link_to 'Back', datos_registros_path %>
+	<%= link_to 'Show', @datos_registro %> |
+	<%= link_to 'Back', datos_registros_path %>
+<% elsif usuario_signed_in? %>
+	<% if @datos_registro.usuario_id == current_usuario_id %>
+		<%= render 'form' %>
+	<% end %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
   <p><%= link_to "Menú Principal", root_path %></p>

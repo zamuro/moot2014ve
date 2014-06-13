@@ -1,4 +1,6 @@
 Moot::Application.routes.draw do
+  get "contact_form/new"
+  get "contact_form/create"
   devise_for :admins
   resources :pagos
   get "inicio/prohibido"
@@ -13,6 +15,7 @@ Moot::Application.routes.draw do
   resources :padecimientos
   resources :alergies
   resources :enfermedades
+  
   devise_for :usuarios
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
