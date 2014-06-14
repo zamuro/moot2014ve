@@ -44,7 +44,7 @@
   </div>
   <div class="form-group">
     <label class="col-xs-3">Grupo</label>
-  <%= f.collection_select :grupo_id, Grupo.all, :id, :grupo %>
+    <%= f.grouped_collection_select :grupo_id, Distrito.order(:distrito), :grupo, :distrito, :id, :grupo, :include_blank => true  %>
   </div>
   <div class="form-group">
     <%= f.button :submit, "Listo" %>

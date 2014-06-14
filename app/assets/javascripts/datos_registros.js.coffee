@@ -14,3 +14,4 @@ jQuery ->
     else
       $('#datos_registro_distrito_id').empty()
       $('#datos_registro_distrito_id').parent().hide()
+  
