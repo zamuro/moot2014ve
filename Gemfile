@@ -59,5 +59,6 @@ gem 'devise'
 gem 'rails_12factor'
 gem 'prawn'
 gem 'prawn_rails'
+gem 'bootstrap-datepicker-rails'
 
 ruby "2.0.0"
