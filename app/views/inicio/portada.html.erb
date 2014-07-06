@@ -6,15 +6,15 @@
 			<div class="col-xs-4 col-sm-4 col-lg-4">
 					<% if usuario_signed_in? %>
 				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-<<<<<<< HEAD
+
 						<li ><%= link_to 'Pre-Inscríbete', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Llena esta encuesta para conocerte.</span>
-=======
+
 						<li ><%= link_to 'Registra tus datos', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Llena esta pequeña encuesta para conocerte</span>
 						<li><%= link_to "Pre-Selecciona tus rutas", root_path, :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Selecciona hasta tres rutas que te interesen</span>
->>>>>>> 897f28a95d50a6e57b1f5a0ae923816558f6a87b
+
 						<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-xs" %></li>
 				</ul>
 					<% elsif  admin_signed_in? %>
@@ -25,11 +25,6 @@
 						<li>Si ya estás registrado: <%= link_to "Inicia sesión", new_usuario_session_path, :class => "btn btn-primary btn-xs" %> y llena tus datos.</li> 
 					<% end %>
 				</ul>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 897f28a95d50a6e57b1f5a0ae923816558f6a87b
 			</div>
 			<div class="col-xs-8 col-sm-8 col-lg-8 footer-image">
 				<img class="img-responsive portada" src="<%= asset_path('image_index.gif') %>"></img>
