@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container-fluid">
 	<div class="navbar navbar-default">
 		<div class="container-fluid">
 			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
@@ -31,13 +31,13 @@
  		</div>
 
 	</div>
-<%= yield %>
-	<div id="footer" class="container-fluid">
+	<!-- <div id="footer" class="container-fluid">
 	    <nav class="navbar navbar-default navbar-fixed-bottom">
 	        <div class="navbar-inner navbar-content-center">
 	            <p class="text-muted credit">Desarrollado por el equipo de <a href="http://venet.com.ve">Venezolana de Tecnologías</a> - Todos los derechos reservados</p>
 	        </div>
 	    </nav>
-	</div>
+	</div> -->
+<%= yield %>
 </body>
 </html>

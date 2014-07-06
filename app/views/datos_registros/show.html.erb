@@ -1,46 +1,20 @@
+<H1>DATOS DE REGISTRO DEL USUARIO</H1>
 <% if usuario_signed_in? or admin_signed_in? %>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @datos_registro.nombre %>
-</p>
-
-<p>
-  <strong>Cédula de Identidad:</strong>
-  <%= @datos_registro.ci %>
-</p>
-
-<p>
-  <strong>Credencial:</strong>
-  <%= @datos_registro.credencial %>
-</p>
-
-<p>
-  <strong>Fecha de Nacimiento:</strong>
-  <%= @datos_registro.fechaNac %>
-</p>
-
-
-<p>
-  <strong>Región:</strong>
-  <%= @datos_registro.region.region %>
-</p>
-
-<p>
-  <strong>Distrito:</strong>
-  <%= @datos_registro.distrito.distrito %>
-</p>
-
-<p>
-  <strong>Grupo:</strong>
-  <%= @datos_registro.grupo.grupo %>
-</p>
-
-
-<%= link_to 'Edit', edit_datos_registro_path(@datos_registro) %> |
-<%= link_to 'Back', datos_registros_path %>
+<% @datos_registro = DatosRegistro.find(params[:id]) %>
+<table class="table">
+  <% for datos_registro in @datos_registro.attributes.keys.drop(2) %>
+    <tr>
+      <td>
+        <div class="col-xs-2"> <%= datos_registro.humanize %></div> 
+        <div class="col-xs-4"><%= @datos_registro.attributes[datos_registro].to_s %></div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Edita tus datos', edit_datos_registro_path(@datos_registro) %> |
+<%= link_to 'Volver al inicio', root_path %>
 <% else %>
   <%= render file: "inicio/prohibido" %>
   <p><%= link_to "Menú Principal", root_path %></p>
 <% end %>
+
