@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MOOT NACIONAL 2014</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>MOOT NACIONAL 2014</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
-<<<<<<< HEAD
-<body>
-	<div class="navbar navbar-default container-fluid">
-=======
 <body class="container-fluid">
 	<div class="navbar navbar-default">
-		<div class="container-fluid">
->>>>>>> 3f81a83fdea4f25c28cc58399cb43f7f069b8d5d
-			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
 		
-			<div class="navbar-default navbar-text">
-				 <% if usuario_signed_in? %>  
-					Autenticado como <%= current_usuario.email %>. ¿No eres tú?
-					
-    					<%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
-    					
-  				<% else %>  
-	  				<ul>
-	  					<li>
-				    			Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
-						</li>
-<!--						<li>
-							Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path, :class => "btn btn-primary btn-sm" %>
-						</li> -->
-					</ul>
- 				<% end %>  
- 			</div>
+			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
 
+			<div class="navbar-default navbar-text">
+				<% if usuario_signed_in? %>  
+				Autenticado como <%= current_usuario.email %>. ¿No eres tú?
+
+				<%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
+
+				<% else %>  
+				<ul>
+					<li>
+						Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
+					</li>
+<!--				
+					<li>
+						Si eres dirigente, inicia sesión <%= link_to "Aquí", new_admin_session_path, :class => "btn btn-primary btn-sm" %>
+					</li> 
+-->
+				</ul>
+				<% end %>  
+			</div>
+		</div>
+<!-- 
+		<div id="footer" class="container-fluid">
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+				<div class="navbar-inner navbar-content-center">
+					<p class="text-muted credit">Desarrollado por el equipo de <a href="http://venet.com.ve">Venezolana de Tecnologías</a> - Todos los derechos reservados</p>
+				</div>
+			</nav>
+		</div> -->
+<%= yield %>
 	</div>
-<<<<<<< HEAD
-<%= yield %>
-	
-=======
-	<!-- <div id="footer" class="container-fluid">
-	    <nav class="navbar navbar-default navbar-fixed-bottom">
-	        <div class="navbar-inner navbar-content-center">
-	            <p class="text-muted credit">Desarrollado por el equipo de <a href="http://venet.com.ve">Venezolana de Tecnologías</a> - Todos los derechos reservados</p>
-	        </div>
-	    </nav>
-	</div> -->
-<%= yield %>
->>>>>>> 3f81a83fdea4f25c28cc58399cb43f7f069b8d5d
+
 </body>
 </html>
