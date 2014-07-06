@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-default">
-		<div class="container-fluid">
+	<div class="navbar navbar-default container-fluid">
 			<p class="list-group-item-text"><%= link_to "Menú principal", root_path, :class => "btn btn-primary btn-sm" %></p>
 		
 			<div class="navbar-default navbar-text">
@@ -28,16 +27,9 @@
 					</ul>
  				<% end %>  
  			</div>
- 		</div>
 
 	</div>
 <%= yield %>
-	<div id="footer" class="container-fluid">
-	    <nav class="navbar navbar-default navbar-fixed-bottom">
-	        <div class="navbar-inner navbar-content-center">
-	            <p class="text-muted credit">Desarrollado por el equipo de <a href="http://venet.com.ve">Venezolana de Tecnologías</a> - Todos los derechos reservados</p>
-	        </div>
-	    </nav>
-	</div>
+	
 </body>
 </html>

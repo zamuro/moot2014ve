@@ -1,4 +1,6 @@
 Moot::Application.routes.draw do
+  resources :rutas_surveys
+
   get "contact_form/new"
   get "contact_form/create"
   devise_for :admins

@@ -30,7 +30,7 @@ class DatosRegistrosController < ApplicationController
     
     respond_to do |format|
       if @datos_registro.save
-        format.html { redirect_to new_datos_usuario_path, notice: 'Datos registro was successfully created.' }
+        format.html { redirect_to root_path }
         
       else
         format.html { render action: 'new' }

@@ -4,14 +4,21 @@
 	<body class="container-fluid">
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-lg-4">
-				<p>Hodor, hodor HODOR hodor, hodor hodor, hodor. Hodor hodor? Hodor hodor hodor hodor hodor hodor hodor! Hodor! Hodor hodor, hodor - hodor - hodor... Hodor hodor hodor. Hodor hodor - hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor; hodor hodor, hodor, hodor hodor. Hodor hodor hodor hodor hodor. </p>
+					<% if usuario_signed_in? %>
+				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+						<li ><%= link_to 'Pre-Inscríbete', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
+						<span class="help-block">Llena esta encuesta para conocerte.</span>
+						<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-xs" %></li>
+				</ul>
+					<% elsif  admin_signed_in? %>
+				<ul>
+						<li><%= link_to 'Datos de inscritos', datos_usuarios_path, :class => "btn btn-primary btn-xs" %></li>
+					<% else %>
+						<li>Si no estás registrado: <%= link_to "¡Regístrate!", new_usuario_registration_path,  :class => "btn btn-primary btn-xs" %>, es muy sencillo.</li>
+						<li>Si ya estás registrado: <%= link_to "Inicia sesión", new_usuario_session_path, :class => "btn btn-primary btn-xs" %> y llena tus datos.</li> 
+					<% end %>
+				</ul>
 
-				<p>Hodor, hodor, hodor. Hodor hodor; hodor hodor? Hodor hodor hodor hodor; hodor hodor, hodor, hodor hodor. Hodor. Hodor HODOR hodor, hodor hodor... Hodor hodor hodor? Hodor. Hodor hodor hodor HODOR hodor, hodor hodor hodor hodor - hodor?! </p>
-
-				<blockquote>
-					<p>Hodor! Hodor hodor, HODOR hodor, hodor hodor hodor hodor? Hodor. Hodor hodor - hodor; hodor hodor. Hodor. Hodor, hodor... Hodor hodor hodor? Hodor, hodor hodor hodor hodor hodor, hodor, hodor hodor. </p>
-					<small><b>Hodor</b> in <cite title="Source Title">HODOR!!</cite></small>
-				</blockquote>
 
 			</div>
 			<div class="col-xs-8 col-sm-8 col-lg-8 footer-image">
