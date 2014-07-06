@@ -30,7 +30,11 @@ class DatosRegistrosController < ApplicationController
     
     respond_to do |format|
       if @datos_registro.save
+<<<<<<< HEAD
         format.html { redirect_to root_path }
+=======
+        format.html { redirect_to root_path, notice: 'Datos registro was successfully created.' }
+>>>>>>> 897f28a95d50a6e57b1f5a0ae923816558f6a87b
         
       else
         format.html { render action: 'new' }
@@ -44,7 +48,7 @@ class DatosRegistrosController < ApplicationController
   def update
     respond_to do |format|
       if @datos_registro.update(datos_registro_params)
-        format.html { redirect_to @datos_registro, notice: 'Datos registro was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Datos registro was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
