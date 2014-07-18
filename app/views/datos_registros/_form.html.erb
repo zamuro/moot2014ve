@@ -39,7 +39,7 @@
       $('[data-behaviour~=datepicker]').datepicker();
     })
   </script>
-  <span class="help-block">En formato DD/MM/AAAA. Ejemplo: 10/10/2000</span>
+  
 </div>
   <div class="form-group">
     <label class="col-xs-3">Región</label>
@@ -51,7 +51,7 @@
   </div>
   <div class="form-group">
     <label class="col-xs-3">Grupo</label>
-    <%= f.grouped_collection_select :grupo_id, Distrito.order(:distrito), :grupo, :distrito, :id, :grupo, :include_blank => true  %>
+    <%= f.grouped_collection_select :grupo_id, Distrito.order(:distrito), :grupo, :distrito, :id, :grupo, :include_blank => true %>
   </div>
   <div class="form-group">
     <%= f.button :submit, "Listo" %>
