@@ -32,13 +32,8 @@
 </div>
 <div class="form-group">
   <label class="col-xs-3">Fecha de Nacimiento</label>
-  <%= f.input :fechaNac, as: :string, label: false, :inline_label => 'Fecha de Nacimiento', input_html: { class: "datepicker" } %>
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('[data-behaviour~=datepicker]').datepicker();
-    })
-  </script>
+  <%= f.input :fechaNac, as: :string, label: false, :inline_label => 'Fecha de Nacimiento' %>
+  <span class="help-block">En formato MM/DD/AAAA</span>
   
 </div>
   <div class="form-group">
