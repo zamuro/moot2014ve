@@ -7,14 +7,14 @@
 					<% if usuario_signed_in? %>
 				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
 
-						<li ><%= link_to 'Pre-Inscríbete', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Llena esta encuesta para conocerte.</span>
-
-						<li ><%= link_to 'Registra tus datos', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Llena esta pequeña encuesta para conocerte</span>
-						<li><%= link_to "Pre-Selecciona tus rutas", root_path, :class => "btn btn-primary btn-xs" %></li>
+						<li ><%= link_to 'Introduce tus datos', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
+						<span class="help-block">Tus datos de registro van acá.</span>
+						<li ><%= link_to 'Llena tu ficha médica', new_fichas_medica_path, :class => "btn btn-primary btn-xs" %></li>
+						<span class="help-block">Con este sencillo cuestionario, ayúdanos a cuidar de ti durante el evento.</span>
+						<li><%= link_to "Pre-Selecciona tus rutas", 'inicio/unavailable', :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Selecciona hasta tres rutas que te interesen</span>
-
+						<li><%= link_to "Registra tus pagos", 'inicio/unavailable', :class => "btn btn-primary btn-xs" %></li>
+						<span class="help-block">Tu pago puntual garantiza la calidad del evento.</span>
 						<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-xs" %></li>
 				</ul>
 					<% elsif  admin_signed_in? %>

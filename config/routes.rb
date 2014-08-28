@@ -7,6 +7,7 @@ Moot::Application.routes.draw do
   resources :pagos
   get "inicio/prohibido"
   get "inicio/index"
+  get "inicio/unavailable"
   get "fichas_medicas/show"
   get "inicio/portada"
   resources :datos_usuarios
