@@ -6,11 +6,14 @@ class PagosController < ApplicationController
   # GET /pagos.json
   def index
     @pagos = Pago.all
+    @datos_registros = DatosRegistro.all
   end
 
   # GET /pagos/1
   # GET /pagos/1.json
   def show
+    @pago = Pago.find(params[:id])
+    @datos_registro = DatosRegistro.find(params[:id])
   end
 
   # GET /pagos/new
