@@ -1,3 +1,4 @@
 class RutasSurvey < ActiveRecord::Base
-	has_many :ruta
+	belongs_to :usuario
+	belongs_to :route
 end
