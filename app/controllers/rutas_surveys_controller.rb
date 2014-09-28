@@ -1,5 +1,6 @@
 class RutasSurveysController < ApplicationController
   before_action :set_rutas_survey, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_usuario!
 
   # GET /rutas_surveys
   # GET /rutas_surveys.json
