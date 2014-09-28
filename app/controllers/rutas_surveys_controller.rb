@@ -69,6 +69,6 @@ class RutasSurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rutas_survey_params
-      params[:rutas_survey]
+      params.require(:rutas_survey).permit(:usuario_id, :ruta1, :ruta2, :ruta3)
     end
 end

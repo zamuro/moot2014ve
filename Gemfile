@@ -60,5 +60,7 @@ gem 'rails_12factor'
 gem 'prawn'
 gem 'prawn_rails'
 gem 'bootstrap-datepicker-rails'
+#gem 'konami-code', :git => 'https://github.com/tommcfarlin/konami-code.git'
+gem 'rake', '= 10.3.2'
 
 ruby "2.0.0"

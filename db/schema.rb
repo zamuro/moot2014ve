@@ -153,6 +153,20 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.string "region", limit: 32
   end
 
+  create_table "rutas", force: true do |t|
+    t.string  "ruta",        limit: 64, null: false
+    t.text    "descripcion"
+    t.integer "capacidad",              null: false
+    t.string  "responsable", limit: 64, null: false
+  end
+
+  create_table "rutas_surveys", force: true do |t|
+    t.integer "usuario_id", null: false
+    t.integer "ruta1",      null: false
+    t.integer "ruta2"
+    t.integer "ruta3"
+  end
+
   create_table "tipo_sangres", force: true do |t|
     t.string "tipo", limit: 6
   end
