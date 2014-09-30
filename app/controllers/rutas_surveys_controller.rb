@@ -37,6 +37,7 @@ class RutasSurveysController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /rutas_surveys/1
   # PATCH/PUT /rutas_surveys/1.json
