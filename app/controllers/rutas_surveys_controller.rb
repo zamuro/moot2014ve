@@ -28,12 +28,12 @@ class RutasSurveysController < ApplicationController
     @rutas_survey = RutasSurvey.new(rutas_survey_params)
 
     respond_to do |format|
-      if @rutas_survey.save
-        format.html { redirect_to @rutas_survey, notice: 'Rutas survey was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @rutas_survey }
+      if @alergy.save
+        format.html { redirect_to root_path, notice: 'Alergy was successfully created.' }
+        
       else
         format.html { render action: 'new' }
-        format.json { render json: @rutas_survey.errors, status: :unprocessable_entity }
+        format.json { render json: @alergy.errors, status: :unprocessable_entity }
       end
     end
   end
