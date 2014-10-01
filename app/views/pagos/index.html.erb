@@ -1,6 +1,6 @@
 <h1>Listing pagos</h1>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -21,7 +21,7 @@
         </td>
         <td><%= pago.voucher %></td>
         <td><%= pago.monto %></td>
-        <td><%= pago.created_at %></td>
+        <td><%= pago.fecha %></td>
         <td><%= link_to 'Show', pago %></td>
       </tr>
     <% end %>
