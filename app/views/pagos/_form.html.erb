@@ -15,7 +15,12 @@
   <% end %>
   <div class="field">
     <%= f.label :voucher %><br>
-    <%= f.number_field :voucher %>
+    <%= f.text_field :voucher %>
+  </div>
+  <div class="field">
+    <%= f.label "Banco" %><br>
+    <%= f.collection_select :banco_id, Banco.all.order(:banco), :id, :banco, :include_blank => true  %>
+    <span class="help-block">En caso de que hayas transferido. Si depositaste, deja el campo en blanco</span>
   </div>
   <div class="field">
     <%= f.label :monto %><br>
@@ -24,8 +29,9 @@
   <div class="field">
     <%= f.label :fecha %><br>
     <%= f.text_field :fecha %>
+    <span class="help-block">En formato MM/DD/AAAA</span>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Registrar pago" %>
   </div>
 <% end %>

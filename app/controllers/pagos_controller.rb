@@ -7,6 +7,7 @@ class PagosController < ApplicationController
   def index
     @pagos = Pago.all
     @datos_registros = DatosRegistro.all
+    @bancos = Banco.all
   end
 
   # GET /pagos/1
@@ -77,6 +78,6 @@ class PagosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pago_params
-      params.require(:pago).permit(:usuario_id, :voucher, :monto, :fecha)
+      params.require(:pago).permit(:usuario_id, :voucher, :monto, :fecha, :banco_id)
     end
 end
