@@ -29,9 +29,7 @@
           <td><%= datos_registro.region.region %></td>
           <td><%= datos_registro.distrito.distrito %></td>
           <td><%= datos_registro.grupo.grupo %></td>
-          <td><%= datos_registro.rama.rama %></td>
-          <td><%= datos_registro.unidad.unidad %></td>
-          <% if admin_signed_in? %>
+           <% if admin_signed_in? %>
           <td><%= link_to 'Mostrar', datos_registro %></td>
           <td><%= link_to 'Editar', edit_datos_registro_path(datos_registro) %></td>
           <td><%= link_to 'Borrar', datos_registro, method: :delete, data: { confirm: 'Confirme. Esta acción no puede deshacerse' } %></td>
