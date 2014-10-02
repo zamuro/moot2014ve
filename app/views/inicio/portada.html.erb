@@ -11,6 +11,7 @@
 						<span class="help-block">Tus datos de registro van acá.</span>
 						<li ><%= link_to 'Llena tu ficha médica', new_fichas_medica_path, :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Con este sencillo cuestionario, ayúdanos a cuidar de ti durante el evento.</span>
+						<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank', :class => "btn btn-primary btn-xs" %></li>
 						<li><%= link_to "Pre-Selecciona tus rutas", new_rutas_survey_path, :class => "btn btn-primary btn-xs" %></li>
 						<span class="help-block">Selecciona hasta tres rutas que te interesen</span>
 						<li><%= link_to "Registra tus pagos", new_pago_path, :class => "btn btn-primary btn-xs" %></li>
