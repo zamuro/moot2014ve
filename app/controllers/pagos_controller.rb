@@ -6,7 +6,7 @@ class PagosController < ApplicationController
   # GET /pagos.json
   def index
     @pagos = Pago.all
-    @datos_registros = DatosRegistro.all
+    
     @bancos = Banco.all
   end
 
@@ -33,7 +33,7 @@ class PagosController < ApplicationController
 
     respond_to do |format|
       if @pago.save
-        format.html { redirect_to root_url, notice: 'Pago was successfully created.' }
+        format.html { redirect_to "inicio/success", notice: 'Pago was successfully created.' }
         format.json { render action: 'show', status: :created, location: @pago }
       else
         format.html { render action: 'new' }
