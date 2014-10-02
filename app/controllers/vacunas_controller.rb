@@ -29,7 +29,7 @@ class VacunasController < ApplicationController
 
     respond_to do |format|
       if @vacuna.save
-        format.html { redirect_to root_path, notice: 'Vacuna was successfully created.' }
+        format.html { redirect_to new_datos_usuario_path, notice: 'Vacuna was successfully created.' }
         
       else
         format.html { render action: 'new' }

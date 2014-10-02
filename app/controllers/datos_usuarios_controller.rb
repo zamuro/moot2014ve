@@ -30,7 +30,7 @@ class DatosUsuariosController < ApplicationController
 
     respond_to do |format|
       if @datos_usuario.save
-        format.html { redirect_to new_fichas_medica_path, notice: 'Datos usuario was successfully created.' }
+        format.html { redirect_to "inicio/notice", success: 'Datos usuario was successfully created.' }
         
       else
         format.html { render action: 'new' }

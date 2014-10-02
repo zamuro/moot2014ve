@@ -10,6 +10,7 @@ Moot::Application.routes.draw do
   get "inicio/unavailable"
   get "fichas_medicas/show"
   get "inicio/portada"
+  get "inicio/success"
   resources :datos_usuarios
   resources :datos_registros
   resources :fichas_medicas
