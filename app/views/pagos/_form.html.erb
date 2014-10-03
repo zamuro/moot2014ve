@@ -14,8 +14,9 @@
     <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
   <% end %>
   <div class="field">
-    <%= f.label :voucher %><br>
+    <%= f.label "Número de control" %><br>
     <%= f.text_field :voucher %>
+    <span class="help-block">Los últimos SIETE (07) dígitos del comprobante de depósito o transferencia</span>
   </div>
   <div class="field">
     <%= f.label "Banco" %><br>
