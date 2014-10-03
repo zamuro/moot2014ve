@@ -21,7 +21,7 @@
   <div class="field">
     <%= f.label "Banco" %><br>
     <%= f.collection_select :banco_id, Banco.all.order(:banco), :id, :banco, :include_blank => true  %>
-    <span class="help-block">En caso de que hayas transferido. Si depositaste, deja el campo en blanco</span>
+    <span class="help-block">Selecciona el banco origen de la transferencia. Si depositaste, selecciona "BANCO MERCANTIL"</span>
   </div>
   <div class="field">
     <%= f.label :monto %><br>
