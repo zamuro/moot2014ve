@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MOOT NACIONAL 2014</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	<%= csrf_meta_tags %>
+  <title>MOOT NACIONAL 2014</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
-<body class="container-fluid">
-	<div class="navbar navbar-default">
+<div class="navbar navbar-default">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
         <span class="icon-bar"></span>
@@ -16,73 +17,72 @@
       </button>
       <a class="navbar-brand" href="/"><img src="<%= asset_path('logo.png') %>"></img></a>
     </div>
- <!--     
-  <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <ul class="nav navbar-nav">
-      <% if usuario_signed_in? %>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Principal <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Llena tu ficha médica', new_fichas_medica_path %></li>
-          <li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank' %></li>
-        </ul>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Carga de Datos <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-       	  <li class="dropdown-header">Datos personales</li>
-          <li><%= link_to 'Datos de Registro', new_datos_registro_path %></li>
-          <li><%= link_to 'Datos de Contacto', new_datos_usuario_path %></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Rutas</li>
-          <li><%= link_to 'Selecciona tus rutas', new_rutas_survey_path %></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Pagos</li>
-          <li><%= link_to 'Registra tu pago', new_pago_path %></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Ficha Médica</li>
-          <li><%= link_to 'Alergias', new_alergy_path %></li>
-          <li><%= link_to 'Enfermedades', new_enfermedade_path %></li>
-          <li><%= link_to 'Condiciones Pre-Existentes', new_padecimiento_path %></li>
-          <li><%= link_to 'Vacunas', new_vacuna_path %></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-      	<a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Edición de Datos <b class="caret"></b></a>
-      	<ul class="dropdown-menu">
-      		<li class="dropdown-header">Datos personales</li>
-      		<li><%= link_to 'Datos de Registro', edit_datos_registro_path(current_usuario.id) %></li>
-      		<li><%= link_to 'Datos de Contacto', edit_datos_usuario_path(current_usuario.id)  %></li>
-      		<li class="divider"></li>
-      		<li class="dropdown-header">Ficha Médica</li>
-      		<li><%= link_to 'Alergias', edit_alergy_path(current_usuario.id) %></li>
-      		<li><%= link_to 'Enfermedades', edit_enfermedade_path(current_usuario.id) %></li>
-      		<li><%= link_to 'Condiciones Pre-Existentes', edit_padecimiento_path(current_usuario.id) %></li>
-      		<li><%= link_to 'Vacunas', edit_vacuna_path(current_usuario.id) %></li>
-      		<li class="divider"></li>
-      		<li class="dropdown-header">Rutas</li>
-      		<li><%= link_to 'Selección de rutas', edit_rutas_survey_path(current_usuario.id) %></li>
-      	</ul>
-      </li>
-      <% end %>
 
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <% if usuario_signed_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Principal <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Llena tu ficha médica', new_fichas_medica_path %></li>
+            <li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank' %></li>
+          </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Carga de Datos <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Datos personales</li>
+              <li><%= link_to 'Datos de Registro', new_datos_registro_path %></li>
+              <li><%= link_to 'Datos de Contacto', new_datos_usuario_path %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Rutas</li>
+              <li><%= link_to 'Selecciona tus rutas', new_rutas_survey_path %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Pagos</li>
+              <li><%= link_to 'Registra tu pago', new_pago_path %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Ficha Médica</li>
+              <li><%= link_to 'Alergias', new_alergy_path %></li>
+              <li><%= link_to 'Enfermedades', new_enfermedade_path %></li>
+              <li><%= link_to 'Condiciones Pre-Existentes', new_padecimiento_path %></li>
+              <li><%= link_to 'Vacunas', new_vacuna_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Edición de Datos <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Datos personales</li>
+              <li><%= link_to 'Datos de Registro', edit_datos_registro_path(current_usuario.id) %></li>
+              <li><%= link_to 'Datos de Contacto', edit_datos_usuario_path(current_usuario.id)  %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Ficha Médica</li>
+              <li><%= link_to 'Alergias', edit_alergy_path(current_usuario.id) %></li>
+              <li><%= link_to 'Enfermedades', edit_enfermedade_path(current_usuario.id) %></li>
+              <li><%= link_to 'Condiciones Pre-Existentes', edit_padecimiento_path(current_usuario.id) %></li>
+              <li><%= link_to 'Vacunas', edit_vacuna_path(current_usuario.id) %></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Rutas</li>
+              <li><%= link_to 'Selección de rutas', edit_rutas_survey_path(current_usuario.id) %></li>
+            </ul>
+          </li>
+          <% end %>
+        </li></ul></div>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if usuario_signed_in? %>  
+        <%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
+        <% else %>  
+
+        Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
+
+        <% end %>
+      </ul>
+    </li>
   </ul>
-    <ul class="nav navbar-nav navbar-right">
-    	<% if usuario_signed_in? %>  
-        	<%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
-    	<% else %>  
-    	
-    		Si eres Rover, <%= link_to "Regístrate", new_usuario_registration_path, :class => "btn btn-primary btn-sm" %> o <%= link_to "Entra", new_usuario_session_path, :class => "btn btn-primary btn-sm" %>  
-    	
-    	<% end %>
-        </ul>
-      </li>
-    </ul>
--->
-  </div>
+
+</div>
 </div>
 <%= yield %>
-</div>
-
 </body>
 </html>

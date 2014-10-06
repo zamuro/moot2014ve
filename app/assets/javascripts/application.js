@@ -15,10 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
-$('[data-toggle="tooltip"]').tooltip({
-    'placement': 'top'
-});
-$('[data-toggle="popover"]').popover({
-    trigger: 'hover',
-        'placement': 'top'
+jQuery ->
+$(document).ready(function() {
+    $('dropdown-toggle').dropdown()
 });

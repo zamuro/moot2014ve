@@ -18,5 +18,5 @@ Moot::Application.routes.draw do
   resources :alergies
   resources :enfermedades
   devise_for :usuarios
-  root :to => "inicio#mantenimiento"
+  root :to => "inicio#portada"
 end
