@@ -1,12 +1,5 @@
 Moot::Application.routes.draw do
   resources :rutas_surveys
-  get "contact_form/new"
-  get "contact_form/create"
-  devise_for :admins
-  devise_scope :admin do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
-  end
   resources :admin, :controller => "admin"
   resources :pagos
   get "inicio/prohibido"
@@ -15,6 +8,7 @@ Moot::Application.routes.draw do
   get "fichas_medicas/show"
   get "inicio/portada"
   get "inicio/success"
+  get "inicio/mantenimiento"
   resources :datos_usuarios
   resources :datos_registros
   resources :fichas_medicas
@@ -24,5 +18,5 @@ Moot::Application.routes.draw do
   resources :alergies
   resources :enfermedades
   devise_for :usuarios
-  root :to => "inicio#portada"
+  root :to => "inicio#mantenimiento"
 end
