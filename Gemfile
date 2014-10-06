@@ -63,5 +63,6 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass'
 #gem 'konami-code', :git => 'https://github.com/tommcfarlin/konami-code.git'
 gem 'rake', '= 10.3.2'
+gem 'turnout'
 
 ruby "2.0.0"
