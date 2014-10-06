@@ -1,37 +1,49 @@
 <html>
 	<head>
 	</head>
-	<body class="container-fluid">
-		<div class="row">
-			<div class="col-xs-4 col-sm-4 col-lg-4">
-					<% if usuario_signed_in? %>
-				<ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
 
-						<li ><%= link_to 'Introduce tus datos', new_datos_registro_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Tus datos de registro van acá.</span>
-						<li ><%= link_to 'Llena tu ficha médica', new_fichas_medica_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Con este sencillo cuestionario, ayúdanos a cuidar de ti durante el evento.</span>
-						<li><%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank', :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Para que se pueda exportar el PDF, debes haber llenado tu ficha médica.</span>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag('carousel/ConquistaCentral.png', class: "img-responsive") %>
+      <div class="carousel-caption">
+        <h3>Primera Imágen</h3>
+        <p>Caption disponible</p>
+      </div>
+    </div>
+    <div class="item ">
+      <%= image_tag('carousel/ACICAYCO.png', class: "img-responsive")  %>
+      <div class="carousel-caption">
+        <h3>Segunda Imágen</h3>
+        <p>Caption disponible</p>
+      </div>
+    </div>
+    <div class="item ">
+      <%= image_tag('carousel/AventuraPromesa.png', class: "img-responsive")  %>
+      <div class="carousel-caption">
+        <h3>Tercera Imágen</h3>
+        <p>Caption disponible</p>
+      </div>
+    </div>
+    <div class="item ">
+      <%= image_tag('carousel/TravesiaPlayera.png', class: "img-responsive")  %>
+      <div class="carousel-caption">
+        <h3>Cuarta Imágen</h3>
+        <p>Caption disponible</p>
+      </div>
+    </div>
+</div>
+    
+  </div>
 
-						<li><%= link_to "Pre-Selecciona tus rutas", new_rutas_survey_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Selecciona hasta tres rutas que te interesen</span>
-						<li><%= link_to "Registra tus pagos", new_pago_path, :class => "btn btn-primary btn-xs" %></li>
-						<span class="help-block">Tu pago puntual garantiza la calidad del evento.</span>
-						<li><%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-xs" %></li>
-				</ul>
-					<% elsif  admin_signed_in? %>
-				<ul>
-						<li><%= link_to 'Datos de inscritos', datos_usuarios_path, :class => "btn btn-primary btn-xs" %></li>
-					<% else %>
-						<li>Si no estás registrado: <%= link_to "¡Regístrate!", new_usuario_registration_path,  :class => "btn btn-primary btn-xs" %>, es muy sencillo.</li>
-						<li>Si ya estás registrado: <%= link_to "Inicia sesión", new_usuario_session_path, :class => "btn btn-primary btn-xs" %> y llena tus datos.</li> 
-					<% end %>
-				</ul>
-			</div>
-			<div class="col-xs-8 col-sm-8 col-lg-8 footer-image">
-				<img class="img-responsive portada" src="<%= asset_path('image_index.gif') %>"></img>
-			</div>
-		</div>
-	</body>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
 </html>

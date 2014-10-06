@@ -15,10 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-
-$(function() {
-    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+$('[data-toggle="tooltip"]').tooltip({
+    'placement': 'top'
+});
+$('[data-toggle="popover"]').popover({
+    trigger: 'hover',
+        'placement': 'top'
 });
