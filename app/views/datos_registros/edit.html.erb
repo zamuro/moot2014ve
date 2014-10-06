@@ -1,11 +1,11 @@
-<% if admin_signed_in? %>
+
 	<h1>Editing datos_registro</h1>
 
 	<%= render 'form' %>
 
 	<%= link_to 'Show', @datos_registro %> |
 	<%= link_to 'Back', datos_registros_path %>
-<% elsif usuario_signed_in? %>
+<% if usuario_signed_in? %>
 	<% if @datos_registro.id == current_usuario.id %>
 		<%= render 'form' %>
 	<% end %>
