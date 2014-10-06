@@ -1,6 +1,5 @@
 Moot::Application.routes.draw do
   resources :rutas_surveys
-  resources :admin, :controller => "admin"
   resources :pagos
   get "inicio/prohibido"
   get "inicio/index"
@@ -19,4 +18,7 @@ Moot::Application.routes.draw do
   resources :enfermedades
   devise_for :usuarios
   root :to => "inicio#portada"
+  devise_scope :usuario do
+    get "usuarios/sign_out", to: "devise/sessions#destroy"
+  end
 end
