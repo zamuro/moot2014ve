@@ -1,11 +1,11 @@
-<% if admin_signed_in? %>
+
 	<h1>Modifica tus padecimientos</h1>
 
 	<%= render 'form' %>
 
 	<%= link_to 'Show', @padecimiento %> |
 	<%= link_to 'Back', padecimientos_path %>
-<% elsif usuario_signed_in? %>
+<% if usuario_signed_in? %>
 	<% if @padecimiento.usuario_id == current_usuario.id %>
 		<%= render 'form' %>
 	<% end %>

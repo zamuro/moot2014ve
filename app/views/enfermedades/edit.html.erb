@@ -1,11 +1,11 @@
-<% if admin_signed_in? %>
+
 	<h1>Editar enfermedades</h1>
 
 	<%= render 'form' %>
 
 	<%= link_to 'Show', @enfermedade %> |
 	<%= link_to 'Back', enfermedades_path %>
-<% elsif usuario_signed_in? %>
+<% if usuario_signed_in? %>
 	<% if @enfermedade.usuario_id == current_usuario.id %>
 		<%= render 'form' %>
 	<% end %>

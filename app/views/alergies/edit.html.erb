@@ -1,11 +1,11 @@
-<% if admin_signed_in? %>
+
 	<h1>Modifica las alergias que padeces</h1>
 
 	<%= render 'form' %>
 
 	<%= link_to 'Show', @alergy %> |
 	<%= link_to 'Back', alergies_path %>
-<% elsif usuario_signed_in? %>
+<% if usuario_signed_in? %>
 	<% if @alergy.usuario_id == current_usuario.id %>
 		<%= render 'form' %>
 	<% end %>
