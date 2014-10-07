@@ -33,7 +33,7 @@ class PagosController < ApplicationController
 
     respond_to do |format|
       if @pago.save
-        format.html { redirect_to "inicio/success", notice: 'Pago was successfully created.' }
+        format.html { redirect_to "/inicio/success", notice: 'Pago was successfully created.' }
         format.json { render action: 'show', status: :created, location: @pago }
       else
         format.html { render action: 'new' }
