@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.label "Número de control" %><br>
     <%= f.text_field :voucher %>
-    <span class="help-block">Los últimos SIETE (07) dígitos del comprobante de depósito o transferencia</span>
+    <span class="help-block">Por favor, introduce <font size="14"><B>TODOS</B></font> los números del comprobante de depósito</span>
   </div>
   <div class="field">
     <%= f.label "Banco" %><br>
@@ -26,6 +26,7 @@
   <div class="field">
     <%= f.label :monto %><br>
     <%= f.text_field :monto %>
+    <span class="help-block">Monto mínimo: Bs. 100. </span>
   </div>
   <div class="field">
     <%= f.label :fecha %><br>
