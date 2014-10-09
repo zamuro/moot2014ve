@@ -1,19 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Usuario:</strong>
-  <%= @datos_registro.nombre %>
-</p>
-
-<p>
-  <strong>Voucher:</strong>
-  <%= @pago.voucher %>
-</p>
-
-<p>
-  <strong>Monto:</strong>
-  <%= @pago.monto %>
-</p>
+<%= render file: "inicio/prohibido" %>
 
 <%= link_to 'Edit', edit_pago_path(@pago) %> |
 <%= link_to 'Back', pagos_path %>
