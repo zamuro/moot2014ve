@@ -1,6 +1,11 @@
 class PagosController < ApplicationController
   before_action :set_pago, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
+  before_action :set_locale
+ 
+def set_locale
+  I18n.locale = params[:locale] || I18n.default_locale
+end
 
   # GET /pagos
   # GET /pagos.json
