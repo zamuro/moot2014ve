@@ -17,5 +17,7 @@
 //= require bootstrap
 jQuery ->
 $(document).ready(function() {
-    $('dropdown-toggle').dropdown()
+    $('dropdown-toggle').tooltip({
+    	placement : 'top'
+    })
 });

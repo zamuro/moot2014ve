@@ -65,5 +65,6 @@ gem 'bootstrap-sass'
 gem 'rake', '= 10.3.2'
 gem 'turnout'
 gem 'rails-i18n'
+gem 'cancancan', '~> 1.9'
 
 ruby "2.0.0"

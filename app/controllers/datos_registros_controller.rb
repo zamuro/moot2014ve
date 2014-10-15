@@ -17,6 +17,7 @@ end
   # GET /datos_registros/1
   # GET /datos_registros/1.json
   def show
+    
   end
 
   # GET /datos_registros/new

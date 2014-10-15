@@ -1,5 +1,5 @@
 <H1>DATOS DE REGISTRO DEL USUARIO</H1>
-<% if usuario_signed_in? or admin_signed_in? %>
+<% if can? :edit, DatosUsuario %>
 <% @datos_registro = DatosRegistro.find(params[:id]) %>
 <table class="table">
   <% for datos_registro in @datos_registro.attributes.keys.drop(2) %>

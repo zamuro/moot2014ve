@@ -29,6 +29,7 @@ end
 
   # GET /pagos/1/edit
   def edit
+    authorize! :edit, Pago
   end
 
   # POST /pagos
@@ -74,6 +75,7 @@ end
   def datos_registro
     datos_registro = DatosRegistro.find(params[:usuario_id])
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

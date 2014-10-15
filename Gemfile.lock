@@ -33,6 +33,7 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.1.4)
+    cancancan (1.9.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -150,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass
+  cancancan (~> 1.9)
   coffee-rails (~> 4.0.0)
   date_validator
   devise
