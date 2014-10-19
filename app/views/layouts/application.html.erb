@@ -34,17 +34,17 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Carga de Datos <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="dropdown-header">Datos personales</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-user"></span> Datos personales</li>
               <li><%= link_to 'Datos de Registro', new_datos_registro_path %></li>
               <li><%= link_to 'Datos de Contacto', new_datos_usuario_path %></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Rutas</li>
-              <li><%= link_to 'Selecciona tus rutas', new_rutas_survey_path %></li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-leaf"></span> Rutas</li>
+              <li> <%= link_to 'Selecciona tus rutas', new_rutas_survey_path %></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Pagos</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-usd"></span> Pagos</li>
               <li><%= link_to 'Registra tu pago', new_pago_path %></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Ficha Médica</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-plus"></span> Ficha Médica</li>
               <li><%= link_to 'Alergias', new_alergy_path %></li>
               <li><%= link_to 'Enfermedades', new_enfermedade_path %></li>
               <li><%= link_to 'Condiciones Pre-Existentes', new_padecimiento_path %></li>
