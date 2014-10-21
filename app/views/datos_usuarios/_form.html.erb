@@ -49,6 +49,10 @@
     Tipo de Sangre
     <%= f.collection_select :tipo_sangre_id, TipoSangre.all, :id, :tipo %>
   </div>
+  <div class="field">
+    Talla de franela
+    <%= f.collection_select :talla_id, Talla.all, :id, :talla %>
+  </div>
   <div class="actions">
     <%= f.submit "Listo" %>
   </div>
