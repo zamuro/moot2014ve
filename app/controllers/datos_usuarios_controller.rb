@@ -44,7 +44,7 @@ class DatosUsuariosController < ApplicationController
   def update
     respond_to do |format|
       if @datos_usuario.update(datos_usuario_params)
-        format.html { redirect_to @datos_usuario, notice: 'Datos usuario was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Datos usuario was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

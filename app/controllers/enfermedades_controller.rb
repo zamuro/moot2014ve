@@ -43,7 +43,7 @@ class EnfermedadesController < ApplicationController
   def update
     respond_to do |format|
       if @enfermedade.update(enfermedade_params)
-        format.html { redirect_to "/alergias/new", notice: 'Enfermedade was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Enfermedade was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
