@@ -16,7 +16,7 @@ Moot::Application.routes.draw do
   resources :padecimientos
   resources :alergies
   resources :enfermedades
-  devise_for :usuario #, :controllers => { registration: "usuarios/registration"}
+  devise_for :usuarios #, :controllers => { registration: "usuarios/registration"}
   devise_scope :usuario do
     get "usuarios/sign_out", to: "devise/sessions#destroy"
   end
