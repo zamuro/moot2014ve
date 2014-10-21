@@ -54,17 +54,17 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown">Edición de Datos <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="dropdown-header">Datos personales</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-user"></span> Datos personales</li>
               <li><%= link_to 'Datos de Registro', edit_datos_registro_path(current_usuario.id) %></li>
               <li><%= link_to 'Datos de Contacto', edit_datos_usuario_path(current_usuario.id)  %></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Ficha Médica</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-plus"></span> Ficha Médica</li>
               <li><%= link_to 'Alergias', edit_alergy_path(current_usuario.id) %></li>
               <li><%= link_to 'Enfermedades', edit_enfermedade_path(current_usuario.id) %></li>
               <li><%= link_to 'Condiciones Pre-Existentes', edit_padecimiento_path(current_usuario.id) %></li>
               <li><%= link_to 'Vacunas', edit_vacuna_path(current_usuario.id) %></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Rutas</li>
+              <li class="dropdown-header"><span class="glyphicon glyphicon-leaf"></span> Rutas</li>
               <li><%= link_to 'Selección de rutas', edit_rutas_survey_path(current_usuario.id) %></li>
             </ul>
           </li>
