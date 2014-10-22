@@ -1,0 +1,33 @@
+<% if current_usuario.admin? %>
+<h1>Listing pagos</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Voucher</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagos.each do |pago| %>
+      <tr>
+        <td><%= pago.datos_registro.nombre %></td>
+        <td><%= pago.voucher %></td>
+        <td><%= pago.monto %></td>
+        <td><%= pago.fecha %></td>
+        <td><%= link_to 'Show', pago %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% else  %>
+<%= render file: "inicio/prohibido" %>
+<% end %>
+
+<%= link_to 'New Pago', new_pago_path %>

@@ -1,0 +1,16 @@
+<H1>DATOS DE REGISTRO DEL USUARIO</H1>
+<% if current_usuario.admin? || current_usuario.id == @datos_registro.usuario_id %>
+<table class="table">
+  <% for datos_registro in @datos_registro.attributes.keys.drop(2) %>
+    <tr>
+      <td>
+        <div class="col-xs-2"> <%= datos_registro.humanize %></div> 
+        <div class="col-xs-4"><%= @datos_registro.attributes[datos_registro].to_s %></div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Edita tus datos', edit_datos_registro_path(@datos_registro) %> |
+<%= link_to 'Volver al inicio', root_path %>
+<% end %>
+
