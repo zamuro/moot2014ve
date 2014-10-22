@@ -7,6 +7,7 @@ class DatosUsuariosController < ApplicationController
   # GET /datos_usuarios.json
   def index
     @datos_usuarios = DatosUsuario.all
+    @talla = Talla.all
   end
 
   # GET /datos_usuarios/1
