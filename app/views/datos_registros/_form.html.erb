@@ -1,0 +1,56 @@
+<div class="container">
+<%= simple_form_for(@datos_registro) do |f| %>
+  <% if @datos_registro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datos_registro.errors.count, "error") %> prohibited this datos_registro from being saved:</h2>
+
+      <ul>
+      <% @datos_registro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% if usuario_signed_in? %>
+    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+  <% end %>
+<form class="form-horizontal">
+<div class="form-group">
+  <label class="col-xs-3">Nombre completo</label>
+  <%= f.text_field :nombre %>
+  </div>
+  <div class="form-group">
+    <label class="col-xs-3">Cédula de Identidad</label>
+  <%= f.text_field :ci -%>
+<span class="help-block">No coloques puntos ni letras</span>
+    </div>
+  <div class="form-group">
+    <label class="col-xs-3">Número de Credencial</label>
+    <%= f.text_field :credencial %>
+    <span class="help-block">No coloques puntos ni letras</span>
+</div>
+<div class="form-group">
+  <label class="col-xs-3">Fecha de Nacimiento</label>
+  <%= f.input :fechaNac, as: :string, label: false, :inline_label => 'Fecha de Nacimiento' %>
+  <span class="help-block">En formato /DD/MM/AAAA</span>
+  
+</div>
+  <div class="form-group">
+    <label class="col-xs-3">Región</label>
+  <%= f.collection_select :region_id, Region.all.order(:region), :id, :region, :include_blank => true  %>
+  </div>
+  <div class="form-group">
+    <label class="col-xs-3">Distrito</label>
+    <%= f.grouped_collection_select :distrito_id, Region.order(:region), :distrito, :region, :id, :distrito, :include_blank => true  %>
+  </div>
+  <div class="form-group">
+    <label class="col-xs-3">Grupo</label>
+    <%= f.grouped_collection_select :grupo_id, Distrito.order(:distrito), :grupo, :distrito, :id, :grupo, :include_blank => true %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, "Listo" %>
+</div>
+</form>
+<% end %>
+</div>

@@ -1,0 +1,41 @@
+<%= form_for(@pago) do |f| %>
+  <% if @pago.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pago.errors.count, "error") %> prohibited this pago from being saved:</h2>
+
+      <ul>
+      <% @pago.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+  <% if usuario_signed_in? %>
+    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+  <% end %>
+</div>
+  <div class="field">
+    <%= f.label "Número de control" %><br>
+    <%= f.text_field :voucher %>
+    <span class="help-block">Por favor, introduce <B>TODOS</B> los números del comprobante de depósito. <p>Si son menos de doce, rellena con ceros a la izquierda, comenzando con el número 1. e.g.: 100012345678</p></span>
+  </div>
+  <div class="field">
+    <%= f.label "Banco" %><br>
+    <%= f.collection_select :banco_id, Banco.all.order(:banco), :id, :banco, :include_blank => true  %>
+    <span class="help-block">Selecciona el banco origen de la transferencia. Si depositaste, selecciona "BANCO MERCANTIL"</span>
+  </div>
+  <div class="field">
+    <%= f.label :monto %><br>
+    <%= f.text_field :monto %>
+    <span class="help-block">Monto mínimo: Bs. 100. </span>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.text_field :fecha %>
+    <span class="help-block">En formato DD/MM/AAAA</span>
+  </div>
+  <div class="actions">
+    <%= f.submit "Registrar pago" %>
+  </div>
+<% end %>
