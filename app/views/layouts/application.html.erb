@@ -74,6 +74,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if usuario_signed_in? %>  
+        <% if current_usuario.admin? %>
+        modo admin
+        <% end %>
         <%= link_to "Salir", destroy_usuario_session_path, :method => :delete, :class => "btn btn-primary btn-default " %>  
         <% else %>  
 
