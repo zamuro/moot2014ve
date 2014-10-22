@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% if @datos_registro.id == current_usuario.id || current_usuario.admin? %>
+<% if @datos_usuario.id == current_usuario.id || current_usuario.admin? %>
 <p>
   <strong>Usuario:</strong>
   <%= @datos_usuario.usuario_id %>
