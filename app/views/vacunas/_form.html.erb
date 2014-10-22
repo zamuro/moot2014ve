@@ -1,0 +1,74 @@
+<%= simple_form_for(@vacuna) do |f| %>
+<% if @vacuna.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@vacuna.errors.count, "error") %> prohibited this vacuna from being saved:</h2>
+
+  <ul>
+    <% @vacuna.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<form class="form-horizontal">
+  <fieldset>
+<% if usuario_signed_in? %>
+<%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :tetanos, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :tiroidea, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+<%= f.input :gripe, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+<%= f.text_field :otras %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<% end %>

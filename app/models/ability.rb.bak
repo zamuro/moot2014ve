@@ -1,0 +1,17 @@
+class Ability
+  include CanCan::Ability
+
+  def initialize(usuario)
+    usuario ||= Usuario.new 
+    if usuario.dios   
+        can :manage, :all
+    elsif usuario.admin
+        can :manage, [Pago, DatosRegistro]
+    elsif usuario.esev
+        can :manage, [Enfermedade, Alergy, Padecimiento, Vacuna]
+    else
+        can :manage, [DatosRegistro, DatosUsuario, Enfermedade, Vacuna, Padecimiento, Alergy, Pago], :active => true, :usuario_id => usuario.id
+        cannot [:update, :destroy], Pago
+    end
+  end
+end

@@ -1,0 +1,77 @@
+<%= simple_form_for(@alergy) do |f| %>
+<% if @alergy.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@alergy.errors.count, "error") %> prohibited this alergy from being saved:</h2>
+
+  <ul>
+    <% @alergy.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<% if usuario_signed_in? %>
+  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
+
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <%= f.input :alimentos, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label class="col-xs-3">Tipos de Alimentos</label>
+<label class="col-xs-3"><%= f.text_field :detalle_alimento %></label>
+        <span class="help-block">Ej.: Nueces, Legumbres</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+            <%= f.input :picaduras, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label class="col-xs-3">Tipo de picaduras</label>
+        <label class="col-xs-3"><%= f.text_field :detalle_picaduras %></label>
+        <span class="help-block">Ej.: Avispas, Abejas</span>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <%= f.input :medicinas, as: :boolean, checked_value: true, unchecked_value: false %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label class="col-xs-3">Tipos de Medicinas</label>
+   <label class="col-xs-3"><%= f.text_field :detalle_medicinas %></label>
+<span class="help-block">Ej.: Acetaminofén, Aspirina</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label class="col-xs-3">Otras</label>
+<label class="col-xs-3"><%= f.text_field :otras %></label>
+        <span class="help-block">Cualquier otra cosa a la que le tengas alergia</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.button :submit, "Registrar" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<% end %>

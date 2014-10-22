@@ -1,0 +1,184 @@
+<div class="container">
+<%= simple_form_for(@padecimiento) do |f| %>
+<% if @padecimiento.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@padecimiento.errors.count, "error") %> prohibited this padecimiento from being saved:</h2>
+
+  <ul>
+    <% @padecimiento.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<% if usuario_signed_in? %>
+  <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end %>
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :lechina, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :hepatitis, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :rubeola, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :apendicitis, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :sarampion, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :insomnio, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :paperas, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :sonambulismo, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :estrenimiento, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :acidez, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :ulcera, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :asma, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :reflujo, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :bulimia, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="checkbox">
+          <label>
+            
+<%= f.input :hiv, as: :boolean, checked_value: true, unchecked_value: false %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <label for="otras" class="col-lg-2 control-label">Otros padecimientos</label>
+<%= f.text_field :otras %>
+        <span class="help-block">Cualquier otro padecimiento que tengas</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </fieldset>
+    </form>
+    <% end %>
+</div>

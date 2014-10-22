@@ -1,0 +1,15 @@
+
+	<h1>Modifica las alergias que padeces</h1>
+
+
+
+<% if usuario_signed_in? %>
+	<% if @alergy.usuario_id == current_usuario.id %>
+		<%= render 'form' %>
+	<%= link_to 'Show', @alergy %> |
+	<%= link_to 'Back', alergies_path %>
+	<% end %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+	  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

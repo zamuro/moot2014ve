@@ -1,0 +1,2 @@
+module RutasSurveysHelper
+end

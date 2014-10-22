@@ -1,0 +1,15 @@
+
+	<h1>Modifica las vacunas que has recibido</h1>
+
+	
+
+<% if usuario_signed_in? %>
+	<% if @vacuna.usuario_id == current_usuario.id %>
+		<%= render 'form' %>
+		<%= link_to 'Show', @vacuna %> |
+		<%= link_to 'Back', vacunas_path %>
+	<% end %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+	  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

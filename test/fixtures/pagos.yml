@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario_id: 1
+  voucher: 1
+  monto: 9.99
+
+two:
+  usuario_id: 1
+  voucher: 1
+  monto: 9.99

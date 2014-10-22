@@ -1,0 +1,13 @@
+
+	<h1>Editar enfermedades</h1>
+
+<% if usuario_signed_in? %>
+	<% if @enfermedade.usuario_id == current_usuario.id %>
+		<%= render 'form' %>
+		<%= link_to 'Show', @enfermedade %> |
+		<%= link_to 'Back', enfermedades_path %>
+	<% end %>
+<% else %>
+  <%= render file: "inicio/prohibido" %>
+	  <p><%= link_to "Menú Principal", root_path %></p>
+<% end %>

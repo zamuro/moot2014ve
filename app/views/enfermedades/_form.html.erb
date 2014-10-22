@@ -1,0 +1,59 @@
+<%= simple_form_for(@enfermedade) do |f| %>
+  <% if @enfermedade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enfermedade.errors.count, "error") %> prohibited this enfermedade from being saved:</h2>
+
+      <ul>
+      <% @enfermedade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2>Favor llene los datos según corresponda</h2>
+  ¿Padece o ha padecido de alguna de estas enfermedades?
+  <% if usuario_signed_in? %>
+    <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+  <% end %>
+  <form class="form-horizontal">
+<div class="form-group">
+  <%= f.input :diabetes, as: :boolean, checked_value: true, unchecked_value: false, :label => "Diabetes" %>
+</div>
+<div class="form-group">
+  <%= f.input :cancer, as: :boolean, checked_value: true, unchecked_value: false, :label => "Cáncer" %>
+</div>
+<div class="form-group">
+  <%= f.input :cardiopatias, as: :boolean, checked_value: true, unchecked_value: false, :label => "Cardiopatías (Enfermedades del corazón)" %>
+</div>
+<div class="form-group">
+  <%= f.input :hemofilia, as: :boolean, checked_value: true, unchecked_value: false, :label => "Hemofilia" %>
+</div>
+<div class="form-group">
+  <%= f.input :asma, as: :boolean, checked_value: true, unchecked_value: false, :label => "Asma" %>
+</div>
+<div class="form-group">
+  <%= f.input :amigdalitis, as: :boolean, checked_value: true, unchecked_value: false, :label => "Amigdalitis" %>
+</div>
+<div class="form-group">
+  <%= f.input :hipotension, as: :boolean, checked_value: true, unchecked_value: false, :label => "Tensión baja" %>
+</div>
+<div class="form-group">
+  <%= f.input :hipertension, as: :boolean, checked_value: true, unchecked_value: false, :label => "Tensión alta" %>
+</div>
+<div class="form-group">
+  <%= f.input :epilepsia, as: :boolean, checked_value: true, unchecked_value: false, :label => "Epilepsia" %>
+</div>
+<div class="form-group">
+  <%= f.input :sinusitis, as: :boolean, checked_value: true, unchecked_value: false, :label => "Sinusitis" %>
+</div>
+<div class="form-group">
+  <label class="col-xs-3">Si no aparece en la lista, favor detallarla en este campo</label>
+  <%= f.text_field :otras %>
+</div>
+<div class="form-group">
+  <div class="actions">
+    <%= f.button :submit, "Registrar" %>
+  </div>
+</div>
+</form>
+<% end %>
