@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if current_usuario.admin? %>
 <h1>Listing pagos</h1>
 
 <table class="table table-striped table-hover ">
@@ -15,11 +15,7 @@
   <tbody>
     <% @pagos.each do |pago| %>
       <tr>
-        <td>
-          <% if usuario_signed_in? %>
-            <%= pago.usuario.email %>
-            <% end %>
-        </td>
+        <td><%= pago.datos_registro.nombre %></td>
         <td><%= pago.voucher %></td>
         <td><%= pago.monto %></td>
         <td><%= pago.fecha %></td>

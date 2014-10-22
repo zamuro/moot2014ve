@@ -1,11 +1,10 @@
 
 	<h1>Editar tus datos de registro</h1>
-<% if usuario_signed_in? %>
-	<% if @datos_registro.id == current_usuario.id %>
+	<% if @datos_registro.id == current_usuario.id || current_usuario.admin? %>
 		<%= render 'form' %>
 		<%= link_to 'Show', @datos_registro %> |
 		<%= link_to 'Back', datos_registros_path %>
-	<% end %>
+
 <% else %>
   <%= render file: 'inicio/prohibido' %>
 	  <p><%= link_to "Menú Principal", root_path %></p>

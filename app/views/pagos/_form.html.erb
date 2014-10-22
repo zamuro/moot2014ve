@@ -10,9 +10,11 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
   <% if usuario_signed_in? %>
     <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
   <% end %>
+</div>
   <div class="field">
     <%= f.label "Número de control" %><br>
     <%= f.text_field :voucher %>

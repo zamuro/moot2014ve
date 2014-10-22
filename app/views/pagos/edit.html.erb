@@ -1,6 +1,10 @@
-<h1>Editing pago</h1>
+<h1>Editar pagos</h1>
 
-<%= render file: "inicio/prohibido" %>
+<% if current_usuario.admin? %>
+	<%= render "form" %>
+<% else %>
+	<%= render file: "inicio/prohibido" %>
+<% end %>
 
 
 <%= link_to 'Menú principal', root_path %>

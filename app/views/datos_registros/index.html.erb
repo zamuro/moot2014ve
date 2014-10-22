@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if current_usuario.admin? %>
   <h1>Datos de usuarios registrados</h1>
 
   <table class="table table-striped table-hover ">
@@ -29,11 +29,10 @@
           <td><%= datos_registro.region.region %></td>
           <td><%= datos_registro.distrito.distrito %></td>
           <td><%= datos_registro.grupo.grupo %></td>
-           <% if admin_signed_in? %>
           <td><%= link_to 'Mostrar', datos_registro %></td>
           <td><%= link_to 'Editar', edit_datos_registro_path(datos_registro) %></td>
           <td><%= link_to 'Borrar', datos_registro, method: :delete, data: { confirm: 'Confirme. Esta acción no puede deshacerse' } %></td>
-          <% end %>
+          
         </tr>
       <% end %>
     </tbody>

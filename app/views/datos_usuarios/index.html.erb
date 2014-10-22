@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if current_usuario.admin? %>
 <h1>Datos de contacto de usuarios</h1>
 
 <table class="table table-striped table-hover ">
@@ -11,6 +11,7 @@
       <th>Dirección Secundaria</th>
       <th>Número de contacto principal</th>
       <th>Nombre de contacto principal</th>
+      <th>Talla de Franela</th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,6 +28,7 @@
         <td><%= datos_usuario.direccion2 %></td>
         <td><%= datos_usuario.contacto1 %></td>
         <td><%= datos_usuario.contacto2 %></td>
+        <td><%= datos_usuario.talla.talla %></td>
         <td><%= link_to 'Mostrar', datos_usuario %></td>
         <td><%= link_to 'Editar', edit_datos_usuario_path(datos_usuario) %></td>
         <td><%= link_to 'Eliminar', datos_usuario, method: :delete, data: { confirm: 'Favor Confirmar' } %></td>

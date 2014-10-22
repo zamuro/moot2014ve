@@ -1,6 +1,6 @@
-<% if usuario_signed_in? or admin_signed_in? %>
 <p id="notice"><%= notice %></p>
 
+<% if @datos_registro.id == current_usuario.id || current_usuario.admin? %>
 <p>
   <strong>Usuario:</strong>
   <%= @datos_usuario.usuario_id %>

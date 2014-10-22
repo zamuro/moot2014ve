@@ -1,59 +1,59 @@
 <%= simple_form_for(@datos_usuario) do |f| %>
-  <% if @datos_usuario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@datos_usuario.errors.count, "error") %> prohibited this datos_usuario from being saved:</h2>
+<% if @datos_usuario.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@datos_usuario.errors.count, "error") %> prohibited this datos_usuario from being saved:</h2>
 
-      <ul>
-      <% @datos_usuario.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @datos_usuario.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-    <% if usuario_signed_in? %>
-      <%= f.hidden_field "usuario_id", :value => current_usuario.id %>
-    <% end -%>
-  <div class="field">
-    Teléfono principal
-    <%= f.text_field :tel1 %>
-  </div>
-  <div class="field">
-    Teléfono secundario
-    <%= f.text_field :tel2 %>
-  </div>
-  <div class="field">
-    <% if usuario_signed_in? %>
-    Correo electrónico
-      <b><%= current_usuario.email %></b>
-      <%= f.hidden_field "correo", :value => current_usuario.email %>
-    <% end -%>
-  </div>
-  <div class="field">
-    Dirección principal
-    <%= f.text_field :direccion1 %>
-  </div>
-  <div class="field">
-    Dirección secundaria
-    <%= f.text_field :direccion2 %>
-  </div>
-  <div class="field">
-    Nombre del contacto principal
-    <%= f.text_field :contacto1 %>
-  </div>
-  <div class="field">
-    Nombre del contacto secundario
-    <%= f.text_field :contacto2 %>
-  </div>
-  <div class="field">
-    Tipo de Sangre
-    <%= f.collection_select :tipo_sangre_id, TipoSangre.all, :id, :tipo %>
-  </div>
-  <div class="field">
-    Talla de franela
-    <%= f.collection_select :talla_id, Talla.all, :id, :talla %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Listo" %>
-  </div>
+<% if usuario_signed_in? || current_usuario.admin? %>
+<%= f.hidden_field "usuario_id", :value => current_usuario.id %>
+<% end -%>
+<div class="field">
+  Teléfono principal
+  <%= f.text_field :tel1 %>
+</div>
+<div class="field">
+  Teléfono secundario
+  <%= f.text_field :tel2 %>
+</div>
+<div class="field">
+  <% if usuario_signed_in? %>
+  Correo electrónico
+  <b><%= current_usuario.email %></b>
+  <%= f.hidden_field "correo", :value => current_usuario.email %>
+  <% end -%>
+</div>
+<div class="field">
+  Dirección principal
+  <%= f.text_field :direccion1 %>
+</div>
+<div class="field">
+  Dirección secundaria
+  <%= f.text_field :direccion2 %>
+</div>
+<div class="field">
+  Nombre del contacto principal
+  <%= f.text_field :contacto1 %>
+</div>
+<div class="field">
+  Nombre del contacto secundario
+  <%= f.text_field :contacto2 %>
+</div>
+<div class="field">
+  Tipo de Sangre
+  <%= f.collection_select :tipo_sangre_id, TipoSangre.all, :id, :tipo %>
+</div>
+<div class="field">
+  Talla de franela
+  <%= f.collection_select :talla_id, Talla.all, :id, :talla %>
+</div>
+<div class="actions">
+  <%= f.submit "Listo" %>
+</div>
 <% end %>
