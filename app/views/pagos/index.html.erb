@@ -15,7 +15,7 @@
   <tbody>
     <% @pagos.each do |pago| %>
       <tr>
-        <td><%= pago.datos_registro.nombre %></td>
+        <td><%= pago.usuario.email %></td>
         <td><%= pago.voucher %></td>
         <td><%= pago.monto %></td>
         <td><%= pago.fecha %></td>
