@@ -1,5 +1,8 @@
 Moot::Application.routes.draw do
+  get "reports/index"
+  get "reports/pagos"
   root :to => "inicio#portada"
+  get "reportes/pagos"
   get "inicio/prohibido"
   get "inicio/index"
   get "inicio/unavailable"
@@ -16,7 +19,8 @@ Moot::Application.routes.draw do
   resources :padecimientos
   resources :alergies
   resources :enfermedades
-  devise_for :usuarios #, :controllers => { registration: "usuarios/registration"}
+    get "usuarios/create", to: "devise/registrations#new"
+  devise_for :usuarios, :controllers => {:registrations => "usuarios"}
   devise_scope :usuario do
     get "usuarios/sign_out", to: "devise/sessions#destroy"
   end
