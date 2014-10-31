@@ -15,7 +15,7 @@
 			<td><%= @usuarios.count %></td>
 			<td><%= @datos_usuarios.count %></td>
 			<td><%= @pago.count %></td>
-			<td><%= @pago.distinct.count %></td>
+			<td><%= @pago.distinct.count(:usuario_id) %></td>
 		</tr>
 	</tbody>
 </table>
