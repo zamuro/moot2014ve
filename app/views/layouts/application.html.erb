@@ -71,15 +71,18 @@
                     <li class="dropdown">
             <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown"><span class="glyphicon glyphicon-eye-open"></span> Reportes<b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <li class="dropdown-header"><span class="glyphicon glyphicon-eye-open"></span> Posiciones</li>
+                <li><%= link_to 'Posición Consolidada', "/inicio/consolidado" %></li>
+              <li class="divider"></li>
               <li class="dropdown-header"><span class="glyphicon glyphicon-user"></span> Datos personales</li>
-              <li><%= link_to 'Datos de Registro', datos_registros_path %></li>
-              <li><%= link_to 'Datos de Contacto', datos_usuarios_path  %></li>
+                <li><%= link_to 'Datos de Registro', datos_registros_path %></li>
+                <li><%= link_to 'Datos de Contacto', datos_usuarios_path  %></li>
               <li class="divider"></li>
               <li class="dropdown-header"><span class="glyphicon glyphicon-usd"></span> Pagos</li>
-              <li><%= link_to 'Pagos', pagos_path %></li>
+                <li><%= link_to 'Pagos', pagos_path %></li>
               <li class="divider"></li>
               <li class="dropdown-header"><span class="glyphicon glyphicon-leaf"></span> Rutas</li>
-              <li><%= link_to 'Selección de rutas', rutas_surveys_path %></li>
+                <li><%= link_to 'Selección de rutas', rutas_surveys_path %></li>
             </ul>
           </li>
           <% end %>
