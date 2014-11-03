@@ -11,7 +11,6 @@ end
   # GET /pagos.json
   def index
     @pagos = Pago.all
-    
     @bancos = Banco.all
   end
 
