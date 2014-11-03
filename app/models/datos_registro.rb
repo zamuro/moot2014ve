@@ -10,5 +10,4 @@ class DatosRegistro < ActiveRecord::Base
 	belongs_to :rama
 	belongs_to :unidad		
 	has_many :pago
-	
 end
