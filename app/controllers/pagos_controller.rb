@@ -25,6 +25,7 @@ end
   # GET /pagos/new
   def new
     @pago = Pago.new
+    
   end
 
   # GET /pagos/1/edit
@@ -85,6 +86,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pago_params
-      params.require(:pago).permit(:usuario_id, :voucher, :monto, :fecha, :banco_id)
+      params.require(:pago).permit(:usuario_id, :voucher, :monto, :fecha, :banco_id, :datos_registro_id)
     end
 end
