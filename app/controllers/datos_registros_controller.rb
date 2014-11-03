@@ -12,6 +12,13 @@ end
   # GET /datos_registros.json
   def index
     @datos_registros = DatosRegistro.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"datos_registros-#{DateTime.current}\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
   end
 
   # GET /datos_registros/1

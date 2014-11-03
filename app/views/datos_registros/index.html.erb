@@ -1,6 +1,6 @@
 <% if current_usuario.admin? %>
   <h1>Datos de usuarios registrados</h1>
-
+<%= link_to 'Descarga listado exportable a excel', datos_registros_path(format: :csv) %>
   <table class="table table-striped table-hover ">
     <thead>
       <tr>
