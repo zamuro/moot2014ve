@@ -9,5 +9,6 @@ class DatosRegistro < ActiveRecord::Base
 	belongs_to :grupo
 	belongs_to :rama
 	belongs_to :unidad		
+	belongs_to :usuario
 	has_many :pago
 end

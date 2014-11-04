@@ -6,7 +6,7 @@
       <tr>
         <th>Nombre</th>
         <th>Cédula de Identidad</th>
-        <th>Credencial</th>
+        <th>email</th>
         <th>Fecha de Nacimiento</th>
         <th>Región</th>
         <th>Distrito</th>
@@ -24,7 +24,7 @@
         <tr>
           <td><%= datos_registro.nombre %></td>
           <td><%= datos_registro.ci %></td>
-          <td><%= datos_registro.credencial %></td>
+          <td><%= datos_registro.usuario.email %></td>
           <td><%= datos_registro.fechaNac %></td>
           <td><%= datos_registro.region.region %></td>
           <td><%= datos_registro.distrito.distrito %></td>

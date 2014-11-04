@@ -1,5 +1,5 @@
-<%- headers = ['Nombre', 'Fecha de nacimiento', 'Cédula', 'Región', 'Distrito', 'Grupo'] -%>
+<%- headers = ['Nombre', 'Correo electrónico', 'Fecha de nacimiento', 'Cédula', 'Región', 'Distrito', 'Grupo'] -%>
 <%= CSV.generate_line headers %>
 <%- @datos_registros.each do |x| -%>
-  <%= CSV.generate_line([x.nombre, x.fechaNac, x.ci, x.region.region, x.distrito.distrito, x.grupo.grupo]) %>
+  <%= CSV.generate_line([x.nombre, x.usuario.email, x.fechaNac, x.ci, x.region.region, x.distrito.distrito, x.grupo.grupo]) %>
 <%- end -%>

@@ -12,6 +12,7 @@ end
   # GET /datos_registros.json
   def index
     @datos_registros = DatosRegistro.all
+    
     respond_to do |format|
       format.html
       format.csv do
