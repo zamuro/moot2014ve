@@ -44,7 +44,7 @@ class RutasSurveysController < ApplicationController
   def update
     respond_to do |format|
       if @rutas_survey.update(rutas_survey_params)
-        format.html { redirect_to @rutas_survey, notice: 'Rutas survey was successfully updated.' }
+        format.html { redirect_to "/inicio/success", notice: 'Rutas survey was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
