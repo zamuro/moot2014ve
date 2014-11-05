@@ -1,10 +1,10 @@
 
 	<h1>Modifica tus padecimientos</h1>
-<% if @datos_registro.id == current_usuario.id || current_usuario.admin? %>
+<% if @padecimiento.id == current_usuario.id || current_usuario.admin? %>
 		<%= render 'form' %>
 		<%= link_to 'Show', @padecimiento %> |
 		<%= link_to 'Back', padecimientos_path %>
-	<% end %>
+	
 <% else %>
   <%= render file: "inicio/prohibido" %>
 	  <p><%= link_to "Menú Principal", root_path %></p>
