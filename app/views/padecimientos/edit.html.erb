@@ -1,7 +1,6 @@
 
 	<h1>Modifica tus padecimientos</h1>
-<% if usuario_signed_in? || current_usuario.admin? %>
-	<% if @padecimiento.usuario_id == current_usuario.id %>
+<% if @datos_registro.id == current_usuario.id || current_usuario.admin? %
 		<%= render 'form' %>
 		<%= link_to 'Show', @padecimiento %> |
 		<%= link_to 'Back', padecimientos_path %>
