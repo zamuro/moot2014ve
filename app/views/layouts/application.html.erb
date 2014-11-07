@@ -28,6 +28,7 @@
             <li> <%= link_to 'Home', root_path %></li>
             <li> <%= link_to 'Llena tu ficha médica', new_fichas_medica_path %></li>
             <li> <%= link_to 'Imprime tu planilla de inscripción', fichas_medica_path(current_usuario.id, :format => "pdf"), :target => '_blank' %></li>
+            <li><%= link_to 'Estado de cuenta', "pagos/#{current_usuario.id}" %></li>
           </ul>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn btn-primary btn-default navbar-text" data-toggle="dropdown"><span class="glyphicon glyphicon-file"></span> Carga de Datos <b class="caret"></b></a>

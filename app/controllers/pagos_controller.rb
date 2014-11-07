@@ -12,13 +12,30 @@ end
   def index
     @pagos = Pago.all
     @bancos = Banco.all
+    @registro = DatosRegistro.all
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"pagos-#{DateTime.current}\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+
+
   end
 
   # GET /pagos/1
   # GET /pagos/1.json
   def show
     @pago = Pago.find(params[:id])
-    @datos_registro = DatosRegistro.find(params[:id])
+    @fetch = Pago.where(:usuario_id => current_usuario.id)
+    @registro = DatosRegistro.find(params[:id])
+
+  end
+
+  def estado_cuenta
+    @pago = Pago.find(params[:id])
   end
 
   # GET /pagos/new
