@@ -28,8 +28,13 @@ end
   # GET /pagos/1
   # GET /pagos/1.json
   def show
+    @usuario = Usuario.find(params[:id])
     @pago = Pago.find(params[:id])
-    @fetch = Pago.where(:usuario_id => current_usuario.id)
+    if current_usuario.id == @usuario.id
+      @fetch = Pago.where(:usuario_id => current_usuario.id)
+    elsif current_usuario.admin?
+      @fetch = Pago.all
+    end
     @registro = DatosRegistro.find(params[:id])
 
   end
