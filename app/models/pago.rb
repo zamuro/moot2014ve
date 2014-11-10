@@ -1,5 +1,5 @@
 class Pago < ActiveRecord::Base
-	
+	self.primary_key = "usuario_id"
 	validates_presence_of :usuario_id, :monto, :voucher
 	validates_uniqueness_of :voucher
 	validates :monto, numericality: { :greater_than => 99.99 }
