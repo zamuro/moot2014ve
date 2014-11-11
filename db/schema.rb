@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419140907) do
+ActiveRecord::Schema.define(version: 20141111201421) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,10 +26,23 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "nivel_id"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "adults", force: true do |t|
+    t.string   "nombre"
+    t.integer  "region_id"
+    t.integer  "distrito_id"
+    t.date     "fechaNac"
+    t.integer  "capacitacion_id"
+    t.integer  "area_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "ci"
+  end
 
   create_table "alergies", force: true do |t|
     t.integer "usuario_id"
@@ -40,6 +53,14 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.boolean "medicinas"
     t.text    "detalle_medicinas"
     t.text    "otras"
+  end
+
+  create_table "bancos", force: true do |t|
+    t.text "banco"
+  end
+
+  create_table "datos_registro_id", id: false, force: true do |t|
+    t.integer "id"
   end
 
   create_table "datos_registros", force: true do |t|
@@ -70,6 +91,7 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tipo_sangre_id"
+    t.integer  "talla_id"
   end
 
   create_table "distritos", force: true do |t|
@@ -139,10 +161,13 @@ ActiveRecord::Schema.define(version: 20140419140907) do
 
   create_table "pagos", force: true do |t|
     t.integer  "usuario_id"
-    t.integer  "voucher"
+    t.integer  "voucher",           limit: 8
     t.decimal  "monto"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "banco_id"
+    t.date     "fecha"
+    t.integer  "datos_registro_id"
   end
 
   create_table "ramas", force: true do |t|
@@ -153,7 +178,8 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.string "region", limit: 32
   end
 
-  create_table "rutas", force: true do |t|
+  create_table "routes", id: false, force: true do |t|
+    t.integer "id",                     null: false
     t.string  "ruta",        limit: 64, null: false
     t.text    "descripcion"
     t.integer "capacidad",              null: false
@@ -165,6 +191,11 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.integer "ruta1",      null: false
     t.integer "ruta2"
     t.integer "ruta3"
+  end
+
+  create_table "tallas", id: false, force: true do |t|
+    t.integer "id",                null: false
+    t.string  "talla", limit: nil
   end
 
   create_table "tipo_sangres", force: true do |t|
@@ -189,6 +220,7 @@ ActiveRecord::Schema.define(version: 20140419140907) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
