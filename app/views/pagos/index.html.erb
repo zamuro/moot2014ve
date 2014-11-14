@@ -1,10 +1,11 @@
 <% if current_usuario.admin? %>
 <h1>Pagos Registrados</h1>
-
+<%= link_to 'Descarga listado exportable a excel', pagos_path(format: :csv) %>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>Correo</th>
       <th>Voucher</th>
       <th>Monto</th>
       <th>Fecha</th>
@@ -15,7 +16,13 @@
   <tbody>
     <% @pagos.each do |pago| %>
       <tr>
-        <td><%= pago.datos_registro.nombre %></td>
+        <td>
+          <% if @registro.empty? %>
+            <% p self %>
+            <%= @registro.nombre %>
+          <% end %>
+        </td>
+        <td><%= pago.usuario.email %></td>
         <td><%= pago.voucher %></td>
         <td><%= pago.monto %></td>
         <td><%= pago.fecha %></td>

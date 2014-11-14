@@ -1,0 +1,5 @@
+<%- headers = ['Nombre', 'Correo electrónico', 'Fecha de nacimiento', 'Cédula', 'Región', 'Distrito', 'Grupo'] -%>
+<%= CSV.generate_line headers %>
+<%- @pagos.each do |x| -%>
+  <%= CSV.generate_line([x.datos_registro_id, x.usuario.email, x.voucher, x.banco.banco, x.monto, x.fecha, x.created_at]) %>
+<%- end -%>
