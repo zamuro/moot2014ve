@@ -12,6 +12,7 @@ Moot::Application.routes.draw do
   get "fichas_medicas/show"
   get "inicio/portada"
   get "inicio/success"
+  get "pagos/penalidades"
   get "inicio/mantenimiento"
   resources :rutas_surveys
   resources :pagos
