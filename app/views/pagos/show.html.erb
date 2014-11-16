@@ -20,6 +20,10 @@
 			<td><%= x.banco.banco %></td>
 		</tr>
 	<% end %>
+	<tr class="info">
+		<td>Total: </td>
+		<td><b><%= @total %></b></td>
+	</tr>
 	</tbody>
 </table>
 <% elsif  current_usuario.admin? %>
@@ -42,6 +46,10 @@
 				<td><%= x.banco.banco %></td>
 			</tr>
 		<% end %>
+		<tr class="info">
+			<td>Total: </td>
+			<td><b><%= @total %></b></td>
+		</tr>
 		</tbody>
 	</table>
 <% else %>

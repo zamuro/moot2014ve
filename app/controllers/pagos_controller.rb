@@ -32,10 +32,13 @@ end
   def show
     @usuario = Usuario.find(params[:id])
     @pago = Pago.find(params[:id])
+    @id = @pago.usuario_id
     if current_usuario.id == @usuario.id
       @fetch = Pago.where(:usuario_id => current_usuario.id)
+      @total = Pago.where(:usuario_id => current_usuario.id).sum(:monto)
     elsif current_usuario.admin?
-      @fetch = Pago.all
+      @fetch = Pago.where("usuario_id = ?", @id)
+      @total = Pago.where("usuario_id = ?", @id).sum(:monto)
     end
     @registro = DatosRegistro.find(params[:id])
 
