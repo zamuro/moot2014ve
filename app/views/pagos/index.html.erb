@@ -5,6 +5,10 @@
   <thead>
     <tr>
       <th>Correo</th>
+      <th>Nombre</th>
+      <th>Región</th>
+      <th>Distrito</th>
+      <th>Grupo</th>
       <th>Voucher</th>
       <th>Monto</th>
       <th>Fecha</th>
@@ -16,6 +20,34 @@
     <% @pagos.each do |pago| %>
       <tr>
         <td><%= pago.usuario.email %></td>
+        <td>
+          <% if pago.datos_registro.present? %>
+            <%= pago.datos_registro.nombre %>
+          <% else %>
+          <b>NO DISPONIBLE</b>
+          <% end %>
+        </td>
+        <td>
+          <% if pago.datos_registro.present? %>
+            <%= pago.datos_registro.region.region %>
+          <% else %>
+          <b>NO DISPONIBLE</b>
+          <% end %>
+        </td>
+        <td>
+          <% if pago.datos_registro.present? %>
+            <%= pago.datos_registro.distrito.distrito %>
+          <% else %>
+          <b>NO DISPONIBLE</b>
+          <% end %>
+        </td>
+        <td>
+          <% if pago.datos_registro.present? %>
+            <%= pago.datos_registro.grupo.grupo %>
+          <% else %>
+          <b>NO DISPONIBLE</b>
+          <% end %>
+        </td>
         <td><%= pago.voucher %></td>
         <td><%= pago.monto %></td>
         <td><%= pago.fecha %></td>
