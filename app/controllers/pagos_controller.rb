@@ -11,7 +11,7 @@ end
   # GET /pagos.json
   def index
     @pagos = Pago.all
-    @bancos = Banco.all
+    @banco = Banco.all
     @registro = DatosRegistro.all
 
     respond_to do |format|
