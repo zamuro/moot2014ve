@@ -20,36 +20,19 @@
     <% @pagos.each do |pago| %>
       <tr>
         <td><%= pago.usuario.email %></td>
-        <td>
-          <% if pago.datos_registro.present? %>
-            <%= pago.datos_registro.nombre %>
-          <% else %>
-          <b>NO DISPONIBLE</b>
-          <% end %>
-        </td>
-        <td>
-          <% if pago.datos_registro.present? %>
-            <%= pago.datos_registro.region.region %>
-          <% else %>
-          <b>NO DISPONIBLE</b>
-          <% end %>
-        </td>
-        <td>
-          <% if pago.datos_registro.present? %>
-            <%= pago.datos_registro.distrito.distrito %>
-          <% else %>
-          <b>NO DISPONIBLE</b>
-          <% end %>
-        </td>
-        <td>
-          <% if pago.datos_registro.present? %>
-            <%= pago.datos_registro.grupo.grupo %>
-          <% else %>
-          <b>NO DISPONIBLE</b>
-          <% end %>
-        </td>
+        <% if pago.datos_registro.present? %>
+          <td><%= pago.datos_registro.nombre %></td>
+          <td><%= pago.datos_registro.region.region %></td>
+          <td><%= pago.datos_registro.grupo.grupo %></td>
+          <td><%= pago.datos_registro.distrito.distrito %></td>
+        <% else %>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+        <% end %>
         <td><%= pago.voucher %></td>
-        <td><%= pago.monto %></td>
+        <td><%= pago.monto.to_s.gsub('.', ',') %></td>
         <td><%= pago.fecha %></td>
         <td><%= pago.banco.banco %></td> 
       </tr>
