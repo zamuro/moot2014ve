@@ -41,7 +41,7 @@
         <td><%= pago.banco.banco %></td> 
         <% if pago.datos_usuario.present? %>
             <% if pago.datos_usuario.talla_id.present? %>
-              <td><%= pago.datos_usuario.talla.talla %></td>
+              <td><b><%= pago.datos_usuario.talla.talla %></b></td>
             <% else %>
               <td>N/A</td>
             <% end %>
