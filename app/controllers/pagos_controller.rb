@@ -13,6 +13,7 @@ end
     @pagos = Pago.all
     @banco = Banco.all
     @registro = DatosRegistro.all
+    @usuario = DatosUsuario.all
 
     respond_to do |format|
       format.html

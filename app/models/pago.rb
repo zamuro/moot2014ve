@@ -8,4 +8,5 @@ class Pago < ActiveRecord::Base
 	belongs_to :usuario
 	belongs_to :datos_registro
 	belongs_to :banco
+	belongs_to :datos_usuario
 end

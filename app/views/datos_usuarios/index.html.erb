@@ -28,7 +28,13 @@
         <td><%= datos_usuario.direccion2 %></td>
         <td><%= datos_usuario.contacto1 %></td>
         <td><%= datos_usuario.contacto2 %></td>
-        <td><%= datos_usuario.talla_id %></td>
+        <td>
+          <% if datos_usuario.talla_id.present? %>
+            <%= datos_usuario.talla.talla %>
+          <% else %>
+            No
+          <% end %>
+        </td>
         <td><%= link_to 'Mostrar', datos_usuario %></td>
         <td><%= link_to 'Editar', edit_datos_usuario_path(datos_usuario) %></td>
         <td><%= link_to 'Eliminar', datos_usuario, method: :delete, data: { confirm: 'Favor Confirmar' } %></td>

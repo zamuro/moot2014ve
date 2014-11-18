@@ -6,6 +6,7 @@
     <tr>
       <th>Correo</th>
       <th>Nombre</th>
+      <th>Cédula de Identidad</th>
       <th>Región</th>
       <th>Distrito</th>
       <th>Grupo</th>
@@ -13,6 +14,7 @@
       <th>Monto</th>
       <th>Fecha</th>
       <th>Banco</th>
+      <th>Talla</th>
     </tr>
   </thead>
 
@@ -22,10 +24,12 @@
         <td><%= pago.usuario.email %></td>
         <% if pago.datos_registro.present? %>
           <td><%= pago.datos_registro.nombre %></td>
+          <td><%= pago.datos_registro.ci %></td>
           <td><%= pago.datos_registro.region.region %></td>
           <td><%= pago.datos_registro.distrito.distrito %></td>
           <td><%= pago.datos_registro.grupo.grupo %></td>
         <% else %>
+          <td><b>NO DISPONIBLE</b></td>
           <td><b>NO DISPONIBLE</b></td>
           <td><b>NO DISPONIBLE</b></td>
           <td><b>NO DISPONIBLE</b></td>
@@ -35,6 +39,15 @@
         <td><%= pago.monto.to_s.gsub('.', ',') %></td>
         <td><%= pago.fecha %></td>
         <td><%= pago.banco.banco %></td> 
+        <% if pago.datos_usuario.present? %>
+            <% if pago.datos_usuario.talla_id.present? %>
+              <td><%= pago.datos_usuario.talla.talla %></td>
+            <% else %>
+              <td>N/A</td>
+            <% end %>
+        <% else %>
+            <td>N/A</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

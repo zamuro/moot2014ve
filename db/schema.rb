@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111201421) do
+ActiveRecord::Schema.define(version: 20141118031438) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "adults", force: true do |t|
     t.string   "nombre"
@@ -39,8 +54,16 @@ ActiveRecord::Schema.define(version: 20141111201421) do
     t.text    "otras"
   end
 
+  create_table "areas", force: true do |t|
+    t.string "area", limit: nil
+  end
+
   create_table "bancos", force: true do |t|
     t.text "banco"
+  end
+
+  create_table "capacitacions", force: true do |t|
+    t.string "capacitacion", limit: nil
   end
 
   create_table "datos_registros", force: true do |t|
@@ -148,6 +171,7 @@ ActiveRecord::Schema.define(version: 20141111201421) do
     t.date     "fecha"
     t.integer  "banco_id"
     t.integer  "datos_registro_id"
+    t.integer  "datos_usuario_id"
   end
 
   create_table "ramas", force: true do |t|
@@ -172,8 +196,9 @@ ActiveRecord::Schema.define(version: 20141111201421) do
     t.integer "ruta3"
   end
 
-  create_table "tallas", force: true do |t|
-    t.string "talla", limit: nil
+  create_table "tallas", id: false, force: true do |t|
+    t.integer "id",                null: false
+    t.string  "talla", limit: nil
   end
 
   create_table "tipo_sangres", force: true do |t|
@@ -198,7 +223,6 @@ ActiveRecord::Schema.define(version: 20141111201421) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "nivel_id"
     t.boolean  "admin"
   end
 
