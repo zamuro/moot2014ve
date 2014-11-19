@@ -1,0 +1,51 @@
+<%- headers = ['Correo electrónico', 'Nombre', 'Región', 'Distrito', 'Grupo', 'Número de comprobante', 'Banco', 'Monto', 'Fecha del depósito', 'Fecha de carga al sistema', 'talla'] -%>
+<%= CSV.generate_line headers %>
+<%- @pagos.each do |x| -%>
+  	<%- if x.datos_registro.present? -%>
+  <%= CSV.generate_line(
+  [
+  	x.usuario.email,
+	x.datos_registro.nombre,
+	x.datos_registro.region.region,
+	x.datos_registro.distrito.distrito,
+	x.datos_registro.grupo.grupo,
+  	x.voucher, 
+  	x.banco.banco, 
+  	x.monto.to_s.gsub('.', ','), 
+  	x.fecha, 
+  	x.created_at,
+    if x.datos_usuario.present?
+      if x.datos_usuario.talla_id.present?
+        x.datos_usuario.talla.talla
+      else
+        "n/a"
+      end
+    else
+      "n/a"
+    end
+    ]).html_safe %>
+	<%- else -%>
+	<%= CSV.generate_line(
+  [
+		x.usuario.email,
+		'No disponible',
+		'No disponible',
+		'No disponible',
+		'No disponible',
+		x.voucher, 
+  		x.banco.banco, 
+  		x.monto.to_s.gsub('.', ','), 
+  		x.fecha, 
+  		x.created_at,
+      if x.datos_usuario.present?
+        if x.datos_usuario.talla_id.present?
+          x.datos_usuario.talla.talla
+        else
+          "n/a"
+        end
+      else
+        "n/a"
+      end
+      ]).html_safe %>
+	<%- end -%>	
+<%- end -%>
