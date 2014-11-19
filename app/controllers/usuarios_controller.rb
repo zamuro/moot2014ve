@@ -10,9 +10,9 @@ class UsuariosController < Devise::RegistrationsController
 	    respond_to do |format|
 	      if @usuario.save
 
-	        format.html { redirect_to new_datos_registro_path }
+	        format.html { redirect_to root_path }
 
-	        format.html { redirect_to new_datos_registro_path, notice: 'Cuenta creada. Ahora registra tus datos' }
+	        format.html { redirect_to root_path, notice: 'Cuenta creada. Ahora registra tus datos' }
 
 	        
 	      else
