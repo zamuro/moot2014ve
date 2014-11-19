@@ -1,4 +1,5 @@
 class AdultsController < ApplicationController
+  before_filter :authenticate_usuario!
   def new
   	@adult = Adult.new
   end
@@ -28,7 +29,7 @@ class AdultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adult_params
-      params.require(:adult).permit(:nombre, :ci, :fechaNac, :region_id, :distrito_id, :capacitacion_id, :area_id)
+      params.require(:adult).permit(:usuario_id, :nombre, :ci, :fechaNac, :region_id, :distrito_id, :capacitacion_id, :area_id)
     end
 
 end

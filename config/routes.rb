@@ -1,6 +1,6 @@
 Moot::Application.routes.draw do
   root :to => "inicio#portada"
-  get "postulaciones", to: "adults#new"
+  get "registro_adultos", to: "adults#new"
   get "adults/index"
   get "reports/index"
   get "reports/pagos"
