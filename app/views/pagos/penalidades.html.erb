@@ -1,14 +1,20 @@
 <% if current_usuario.admin? %>
 <h1>Participantes que deben pagar recargos</h1>
-
+<%= link_to 'Descarga listado exportable a excel', pagos_penalidades_path(format: :csv) %>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
+      <th>Correo</th>
       <th>Nombre</th>
+      <th>Cédula de Identidad</th>
+      <th>Región</th>
+      <th>Distrito</th>
+      <th>Grupo</th>
       <th>Voucher</th>
       <th>Monto</th>
       <th>Fecha</th>
       <th>Banco</th>
+      <th>Talla</th>
     </tr>
   </thead>
 
@@ -16,11 +22,32 @@
     <% @pagos.each do |pago| %>
       <tr>
         <td><%= pago.usuario.email %></td>
+        <% if pago.datos_registro.present? %>
+          <td><%= pago.datos_registro.nombre %></td>
+          <td><%= pago.datos_registro.ci %></td>
+          <td><%= pago.datos_registro.region.region %></td>
+          <td><%= pago.datos_registro.distrito.distrito %></td>
+          <td><%= pago.datos_registro.grupo.grupo %></td>
+        <% else %>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+          <td><b>NO DISPONIBLE</b></td>
+        <% end %>
         <td><%= pago.voucher %></td>
-        <td><%= pago.monto %></td>
+        <td><%= pago.monto.to_s.gsub('.', ',') %></td>
         <td><%= pago.fecha %></td>
-        <td><%= pago.banco.banco %></td>
-        
+        <td><%= pago.banco.banco %></td> 
+        <% if pago.datos_usuario.present? %>
+            <% if pago.datos_usuario.talla_id.present? %>
+              <td><b><%= pago.datos_usuario.talla.talla %></b></td>
+            <% else %>
+              <td>N/A</td>
+            <% end %>
+        <% else %>
+            <td>N/A</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +58,3 @@
 <%= render file: "inicio/prohibido" %>
 <% end %>
 
-<%= link_to 'New Pago', new_pago_path %>

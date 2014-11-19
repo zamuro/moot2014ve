@@ -25,7 +25,7 @@ end
   end
 
   def penalidades
-    @pagos = Pago.where("created_at > ?", Date.parse("2014-11-01"))
+    @pagos = Pago.where("created_at >= ?", Date.parse("2014-11-01"))
   end
 
   # GET /pagos/1
