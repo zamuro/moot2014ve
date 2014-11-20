@@ -23,7 +23,7 @@
       <tr>
         <td><%= pago.usuario.email %></td>
         <% if pago.datos_registro.present? %>
-          <td><%= pago.datos_registro.nombre %></td>
+          <td><a href='/pagos/<%= pago.usuario_id %>'><%= pago.datos_registro.nombre %></a></td>
           <td><%= pago.datos_registro.ci %></td>
           <td><%= pago.datos_registro.region.region %></td>
           <td><%= pago.datos_registro.distrito.distrito %></td>
