@@ -39,11 +39,7 @@
         <td><%= pago.monto.to_s.gsub('.', ',') %></td>
         <td><%= pago.fecha %></td>
         <% if pago.banco.present? %>
-          <% if pago.banco.banco_id.present? %>
-            <td><%= pago.banco.banco %></td> 
-          <% else %>
-            <td>N/A</td>
-          <% end %>
+          <td><%= pago.banco.banco %></td> 
         <% else %>
           <td>N/A</td>
         <% end %>
