@@ -5,12 +5,16 @@
   <%= CSV.generate_line(
   [
   	x.usuario.email,
-	x.datos_registro.nombre,
-	x.datos_registro.region.region,
-	x.datos_registro.distrito.distrito,
-	x.datos_registro.grupo.grupo,
-  	x.voucher, 
-  	x.banco.banco, 
+  	x.datos_registro.nombre,
+  	x.datos_registro.region.region,
+  	x.datos_registro.distrito.distrito,
+  	x.datos_registro.grupo.grupo,
+  	x.voucher,
+    if x.banco.present? 
+  	 x.banco.banco
+    else
+      n/a
+    end
   	x.monto.to_s.gsub('.', ','), 
   	x.fecha, 
   	x.created_at,
@@ -33,19 +37,23 @@
 		'No disponible',
 		'No disponible',
 		x.voucher, 
-  		x.banco.banco, 
-  		x.monto.to_s.gsub('.', ','), 
-  		x.fecha, 
-  		x.created_at,
-      if x.datos_usuario.present?
-        if x.datos_usuario.talla_id.present?
-          x.datos_usuario.talla.talla
-        else
-          "n/a"
-        end
+  	if x.banco.present? 
+     x.banco.banco
+    else
+      n/a
+    end
+		x.monto.to_s.gsub('.', ','), 
+		x.fecha, 
+		x.created_at,
+    if x.datos_usuario.present?
+      if x.datos_usuario.talla_id.present?
+        x.datos_usuario.talla.talla
       else
         "n/a"
       end
+    else
+      "n/a"
+    end
       ]).html_safe %>
 	<%- end -%>	
 <%- end -%>

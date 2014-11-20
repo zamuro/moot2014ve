@@ -38,7 +38,9 @@
         <td><%= pago.voucher %></td>
         <td><%= pago.monto.to_s.gsub('.', ',') %></td>
         <td><%= pago.fecha %></td>
-        <td><%= pago.banco.banco %></td> 
+        <% if pago.banco.present? %>
+          <td><%= pago.banco.banco %></td> 
+        <% end %>
         <% if pago.datos_usuario.present? %>
             <% if pago.datos_usuario.talla_id.present? %>
               <td><b><%= pago.datos_usuario.talla.talla %></b></td>
