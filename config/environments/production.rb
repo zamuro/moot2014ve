@@ -79,5 +79,18 @@ Moot::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.serve_static_assets = true
+  config.action_mailer.default_url_options = { :host => 'moot2014.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'scoutsvenezuela.org.ve',
+  :user_name            => 'operacionesmoot@scoutsvenezuela.org.ve',
+  :password             => 'Fi31af30',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
 
 end
