@@ -3,7 +3,7 @@ class DatosUsuariosController < ApplicationController
   #before_filter :authenticate_admin!
   before_filter :authenticate_usuario!
     before_filter do 
-    redirect_to "inicio/prohibido" unless current_user.admin?
+    redirect_to "inicio/prohibido" unless current_usuario.admin?
   end
 
 
