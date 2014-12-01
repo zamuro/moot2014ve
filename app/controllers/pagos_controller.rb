@@ -1,6 +1,10 @@
 class PagosController < ApplicationController
   before_action :set_pago, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
+    before_filter do 
+    redirect_to "inicio/prohibido" unless current_user.admin?
+  end
+
   before_action :set_locale
  
 def set_locale

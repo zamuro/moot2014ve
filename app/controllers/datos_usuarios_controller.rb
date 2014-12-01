@@ -2,6 +2,10 @@ class DatosUsuariosController < ApplicationController
   before_action :set_datos_usuario, only: [:show, :edit, :update, :destroy]
   #before_filter :authenticate_admin!
   before_filter :authenticate_usuario!
+    before_filter do 
+    redirect_to "inicio/prohibido" unless current_user.admin?
+  end
+
 
   # GET /datos_usuarios
   # GET /datos_usuarios.json
