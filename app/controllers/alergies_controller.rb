@@ -1,7 +1,11 @@
 class AlergiesController < ApplicationController
   before_action :set_alergy, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
-
+before_filter do 
+    redirect_to "/inicio/prohibido" unless current_usuario.admin?
+  end
+  
+  
   # GET /alergies
   # GET /alergies.json
   def index

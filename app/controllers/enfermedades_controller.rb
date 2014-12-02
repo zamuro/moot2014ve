@@ -1,7 +1,10 @@
 class EnfermedadesController < ApplicationController
   before_action :set_enfermedade, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
-
+before_filter do 
+    redirect_to "/inicio/prohibido" unless current_usuario.admin?
+  end
+  
   # GET /enfermedades
   # GET /enfermedades.json
   def index

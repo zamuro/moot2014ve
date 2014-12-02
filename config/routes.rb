@@ -25,7 +25,7 @@ Moot::Application.routes.draw do
   resources :enfermedades
   resources :reports
   resources :adults
-  devise_for :usuarios, :skip => [:registrations] 
+  devise_for :usuarios, :skip => [:registrations]
   devise_scope :usuario do
     get "usuarios/sign_out", to: "devise/sessions#destroy"
   end

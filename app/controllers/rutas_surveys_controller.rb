@@ -1,7 +1,10 @@
 class RutasSurveysController < ApplicationController
   before_action :set_rutas_survey, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_usuario!
-
+before_filter do 
+    redirect_to "/inicio/prohibido" unless current_usuario.admin?
+  end
+  
   # GET /rutas_surveys
   # GET /rutas_surveys.json
   def index
